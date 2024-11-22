@@ -11,20 +11,20 @@ interface CarouselSlideProps {
 
 export const CarouselSlide = ({ title, items }: CarouselSlideProps) => {
   return (
-    <div className="w-full max-w-[1129px] mx-auto">
+    <div className="w-full max-w-[1129px] mx-auto px-4">
       <div className="flex flex-col gap-5">
         {/* First Row */}
-        <div className="flex flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           {items.slice(0, 2).map((item, index) => (
             <div 
               key={index}
-              className="flex-1 flex flex-row items-start p-10 gap-5 bg-white rounded-[30px] min-h-[279px]"
+              className="w-full md:w-[547px] flex flex-col md:flex-row items-start p-5 md:p-10 gap-5 bg-white rounded-[30px] min-h-[279px]"
             >
-              <div className="flex flex-col items-start gap-0 w-[232px]">
+              <div className="flex flex-col items-start gap-0 w-full md:w-[232px]">
                 <h4 className="text-[18px] leading-[23px] font-semibold mb-0 font-['Chakra_Petch'] text-black">
                   {item.title}
                 </h4>
-                <div className="w-[232px] h-[153px] mt-0">
+                <div className="w-full md:w-[232px] h-[153px] mt-0">
                   <img 
                     src={item.image} 
                     alt="" 
@@ -40,17 +40,17 @@ export const CarouselSlide = ({ title, items }: CarouselSlideProps) => {
         </div>
 
         {/* Second Row */}
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-col md:flex-row items-center gap-5">
           {items.slice(2, 4).map((item, index) => (
             <div 
               key={index}
-              className="flex-1 flex flex-row items-start p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
+              className="w-full md:w-[547px] flex flex-col md:flex-row items-start p-5 md:p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
             >
-              <div className="flex flex-col items-start gap-0 w-[232px]">
+              <div className="flex flex-col items-start gap-0 w-full md:w-[232px]">
                 <h4 className="text-[18px] leading-[23px] font-semibold mb-0 font-['Chakra_Petch'] text-black">
                   {item.title}
                 </h4>
-                <div className="w-[232px] h-[153px] mt-0">
+                <div className="w-full md:w-[232px] h-[153px] mt-0">
                   <img 
                     src={item.image} 
                     alt="" 
@@ -67,15 +67,15 @@ export const CarouselSlide = ({ title, items }: CarouselSlideProps) => {
 
         {/* Last Item (if exists) */}
         {items[4] && (
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center justify-center w-full">
             <div 
-              className="w-[547px] flex flex-row items-start p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
+              className="w-full md:w-[547px] flex flex-col md:flex-row items-start p-5 md:p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
             >
-              <div className="flex flex-col items-start gap-0 w-[232px]">
+              <div className="flex flex-col items-start gap-0 w-full md:w-[232px]">
                 <h4 className="text-[18px] leading-[23px] font-semibold mb-0 font-['Chakra_Petch'] text-black">
                   {items[4].title}
                 </h4>
-                <div className="w-[232px] h-[153px] mt-0">
+                <div className="w-full md:w-[232px] h-[153px] mt-0">
                   <img 
                     src={items[4].image} 
                     alt="" 

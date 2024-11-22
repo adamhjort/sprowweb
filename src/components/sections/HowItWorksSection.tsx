@@ -132,22 +132,22 @@ export const HowItWorksSection = () => {
       <div className="max-w-5xl mx-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
-            <TabsList className="inline-flex h-14 items-center justify-center rounded-full bg-transparent p-1 gap-4">
+            <TabsList className="inline-flex flex-col sm:flex-row h-auto sm:h-14 items-center justify-center rounded-full bg-transparent p-1 gap-4 w-full max-w-[300px] sm:max-w-none">
               <TabsTrigger 
                 value="hr" 
-                className="rounded-full px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For HR
               </TabsTrigger>
               <TabsTrigger 
                 value="managers" 
-                className="rounded-full px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Managers
               </TabsTrigger>
               <TabsTrigger 
                 value="employees" 
-                className="rounded-full px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Employees
               </TabsTrigger>

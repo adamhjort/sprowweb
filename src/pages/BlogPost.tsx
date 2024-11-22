@@ -27,29 +27,29 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-32 pb-20">
+    <div className="min-h-screen bg-background pt-20 md:pt-32 pb-20">
       <div className="container mx-auto px-4">
         <div className="max-w-[1000px] mx-auto bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden">
           {/* Header Image */}
           <div 
-            className="w-full h-[411px] p-5 relative bg-cover bg-center"
+            className="w-full h-[250px] md:h-[411px] p-5 relative bg-cover bg-center"
             style={{ backgroundImage: `url(${post.image})` }}
           >
-            <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
-              <span className="text-[16px] leading-[21px] font-semibold text-black">
+            <div className="bg-white/50 rounded-[10px] px-2 md:px-[10px] py-2 md:py-[10px] w-fit">
+              <span className="text-[12px] md:text-[16px] leading-[16px] md:leading-[21px] font-semibold text-black">
                 {post.readTime}
               </span>
             </div>
           </div>
 
           {/* Content Container */}
-          <div className="p-[50px_100px] space-y-5">
+          <div className="p-[20px] md:p-[50px] space-y-5">
             {/* Tags */}
             <div className="flex flex-wrap gap-[10px] w-full max-w-[800px]">
               {post.tags.map((tag) => (
                 <span 
                   key={tag}
-                  className="bg-[#FFC8D5] text-black rounded-[20px] px-5 py-[10px] text-xs font-semibold flex items-center justify-center"
+                  className="bg-[#FFC8D5] text-black rounded-[20px] px-3 md:px-5 py-1.5 md:py-[10px] text-[10px] md:text-xs font-semibold flex items-center justify-center"
                 >
                   {tag}
                 </span>
@@ -57,12 +57,12 @@ const BlogPost = () => {
             </div>
 
             {/* Title */}
-            <h1 className="text-[30px] leading-[39px] font-semibold text-[#161616] max-w-[800px]">
+            <h1 className="text-[24px] md:text-[30px] leading-[31px] md:leading-[39px] font-semibold text-[#161616] max-w-[800px]">
               {post.title}
             </h1>
 
             {/* Content */}
-            <div className="prose max-w-[800px] text-[16px] leading-[21px] font-[500] text-[#161616] font-['Chakra_Petch']">
+            <div className="prose max-w-[800px] text-[14px] md:text-[16px] leading-[18px] md:leading-[21px] font-[500] text-[#161616] font-['Chakra_Petch']">
               {post.content.split('\n\n').map((paragraph, index) => (
                 <p key={index} className="mb-6">
                   {paragraph}

@@ -115,50 +115,60 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Footer */}
-      <footer className="border-t py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
-            {/* Logo and Links */}
-            <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-12">
-              {/* Logo */}
-              <div className="text-2xl font-bold text-[#FF93AD]">Sprow</div>
-              
-              {/* Navigation Links */}
-              <div className="flex flex-wrap gap-6">
-                <a href="/about" className="text-foreground hover:text-primary transition-colors">About</a>
-                <a href="/pricing" className="text-foreground hover:text-primary transition-colors">Pricing</a>
-                <a href="/resources" className="text-foreground hover:text-primary transition-colors">Resources</a>
-                <a href="/terms" className="text-foreground hover:text-primary transition-colors">Terms of use</a>
-                <a href="/privacy" className="text-foreground hover:text-primary transition-colors">Privacy policy</a>
-                <a href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-                <a href="/signup" className="text-foreground hover:text-primary transition-colors">Sign up</a>
-                <a href="/demo" className="text-foreground hover:text-primary transition-colors">Book a demo</a>
-                <a href="/login" className="text-foreground hover:text-primary transition-colors">Login</a>
-              </div>
-            </div>
+      <footer className="flex flex-row justify-between items-center py-5 pr-5 pl-0 w-[1440px] h-[113px] bg-white">
+        {/* Sitemap */}
+        <div className="flex flex-row items-end gap-[50px] w-[559px] h-[73px]">
+          {/* Logo */}
+          <div className="w-[134px] h-[70px]">
+            <div className="text-2xl font-bold text-primary">Sprow</div>
+          </div>
 
-            {/* Social and Made with Love */}
-            <div className="flex items-center space-x-6">
-              {/* Social Icons */}
-              <div className="flex space-x-4">
-                <a href="https://linkedin.com" className="text-foreground hover:text-primary transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a href="https://instagram.com" className="text-foreground hover:text-primary transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-              </div>
-              
-              {/* Made with Love in Sweden */}
-              <div className="flex items-center space-x-1 text-sm">
-                <span>Made with</span>
-                <span className="text-red-500">♥️</span>
-                <span>in Sweden</span>
-              </div>
-            </div>
+          {/* Menu */}
+          <div className="flex flex-col items-start gap-[5px] w-[78px] h-[73px]">
+            <a href="/about" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">About</a>
+            <a href="/pricing" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
+            <a href="/resources" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Resources</a>
+          </div>
+
+          {/* Terms and policy */}
+          <div className="flex flex-col items-start gap-[5px] w-[102px] h-[73px]">
+            <a href="/terms" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
+            <a href="/privacy" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
+            <a href="/contact" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Contact</a>
+          </div>
+
+          {/* Login */}
+          <div className="flex flex-col items-start gap-[5px] w-[95px] h-[73px]">
+            <a href="/signup" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
+            <a href="/demo" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
+            <a href="/login" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Login</a>
+          </div>
+        </div>
+
+        {/* Social links */}
+        <div className="flex flex-row items-end gap-[31px] w-[303px] h-[24px]">
+          {/* Social Icons */}
+          <div className="flex flex-row items-center gap-[10px] w-[58px] h-[24px]">
+            <a href="https://linkedin.com" className="text-[#161616] hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://instagram.com" className="text-[#161616] hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="w-[20px] h-0 rotate-90 border-2 border-[#161616] opacity-20" />
+
+          {/* Made with love in Sweden */}
+          <div className="flex flex-row items-start gap-[5px] w-[183px] h-[24px]">
+            <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">Made with</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D74949" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">in Sweden</span>
           </div>
         </div>
       </footer>
+
     </div>
   );
 };

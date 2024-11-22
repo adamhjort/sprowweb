@@ -56,21 +56,33 @@ const Index = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="text-center">
             <div className="mb-6">
-              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Platform" className="w-full h-48 object-cover rounded-lg" />
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+                alt="Platform" 
+                className="w-full h-48 object-cover rounded-lg"
+              />
             </div>
             <h3 className="text-xl font-semibold mb-4">A Unified Platform</h3>
             <p className="text-muted-foreground">Bring everything together in one platform for employees and managers.</p>
           </div>
           <div className="text-center">
             <div className="mb-6">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="AI Growth" className="w-full h-48 object-cover rounded-lg" />
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                alt="AI Growth" 
+                className="w-full h-48 object-cover rounded-lg"
+              />
             </div>
             <h3 className="text-xl font-semibold mb-4">AI-powered Growth</h3>
             <p className="text-muted-foreground">Leverage AI to deliver personalized insights and recommendations.</p>
           </div>
           <div className="text-center">
             <div className="mb-6">
-              <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" alt="Success" className="w-full h-48 object-cover rounded-lg" />
+              <img 
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                alt="Success" 
+                className="w-full h-48 object-cover rounded-lg"
+              />
             </div>
             <h3 className="text-xl font-semibold mb-4">Long-term Success</h3>
             <p className="text-muted-foreground">Focus on sustainable growth and development for your team.</p>

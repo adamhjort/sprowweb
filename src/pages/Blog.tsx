@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -10,28 +11,32 @@ const Blog = () => {
     "Case Studies & Success Stories", "Thought Leadership", "Product"
   ];
 
-  const blogPosts = [
-    {
-      id: 1,
-      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
-      readTime: "5 min read",
-      tags: ["Management", "The Future of Work", "Culture"],
-      title: "The Future of HR: Trends Shaping the Workforce of Tomorrow"
-    },
+  const featuredPost = {
+    id: 1,
+    image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
+    readTime: "5 min read",
+    tags: ["Management", "The Future of Work", "Culture"],
+    title: "The Future of HR: Trends Shaping the Workforce of Tomorrow"
+  };
+
+  const otherPosts = [
     {
       id: 2,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
       readTime: "5 min read",
       tags: ["Management", "The Future of Work", "Culture"],
       title: "Why Employee Engagement Isn't Enough: How to Foster True Empowerment in the Workplace"
     },
     {
       id: 3,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
       readTime: "5 min read",
       tags: ["Management", "The Future of Work", "Culture"],
       title: "From Feedback to Action: Turning Employee Surveys Into Real Change"
     },
     {
       id: 4,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
       readTime: "5 min read",
       tags: ["Management", "The Future of Work", "Culture"],
       title: "The Future of Leadership: What Managers Need to Succeed in 2024 and Beyond"
@@ -61,42 +66,76 @@ const Blog = () => {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="bg-white rounded-3xl overflow-hidden">
-              {post.image && (
-                <div className="relative aspect-[16/9]">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 left-4 bg-white rounded-full px-3 py-1 text-sm">
-                    {post.readTime}
-                  </div>
-                </div>
-              )}
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
-                    <span 
-                      key={tag} 
-                      className="bg-pink-100 text-pink-800 rounded-full px-3 py-1 text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h2 className="text-2xl font-semibold hover:text-primary cursor-pointer">
-                  {post.title}
-                </h2>
+        <div className="flex flex-col lg:flex-row justify-center items-start gap-[30px] max-w-[1274px] mx-auto">
+          {/* Featured Post (Left Column) */}
+          <Link to={`/blog/${featuredPost.id}`} className="w-full lg:w-[536px] bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden">
+            <div 
+              className="w-full h-[572px] p-[30px_20px] relative bg-cover bg-center rounded-t-[30px]"
+              style={{ backgroundImage: `url(${featuredPost.image})` }}
+            >
+              <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
+                <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
+                  {featuredPost.readTime}
+                </span>
               </div>
             </div>
-          ))}
+            <div className="p-[30px_50px_50px] space-y-5">
+              <div className="flex flex-wrap gap-[10px]">
+                {featuredPost.tags.map((tag) => (
+                  <span 
+                    key={tag}
+                    className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h2 className="text-[30px] leading-[39px] font-semibold text-[#161616]">
+                {featuredPost.title}
+              </h2>
+            </div>
+          </Link>
+
+          {/* Other Posts (Right Column) */}
+          <div className="w-full lg:w-[708px] flex flex-col gap-[30px]">
+            {otherPosts.map((post) => (
+              <Link 
+                key={post.id}
+                to={`/blog/${post.id}`} 
+                className="flex flex-col md:flex-row bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden"
+              >
+                <div 
+                  className="w-full md:w-[225px] h-[258px] p-5 relative bg-cover bg-center rounded-t-[30px] md:rounded-l-[30px] md:rounded-tr-none"
+                  style={{ backgroundImage: `url(${post.image})` }}
+                >
+                  <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
+                    <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
+                      {post.readTime}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex-1 p-[30px] space-y-5">
+                  <div className="flex flex-wrap gap-[10px]">
+                    {post.tags.map((tag) => (
+                      <span 
+                        key={tag}
+                        className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="text-[24px] leading-[31px] font-semibold text-[#161616]">
+                    {post.title}
+                  </h2>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Load More Button */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mt-12 mb-12">
           <Button variant="outline" className="rounded-full px-8">
             Load more
           </Button>

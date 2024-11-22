@@ -39,16 +39,16 @@ const Blog = () => {
             </p>
 
             {/* Main Categories */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center items-start content-center gap-[10px] w-full max-w-[1200px] mx-auto">
               {CATEGORIES.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full text-[16px] leading-[21px] font-semibold transition-colors
+                  className={`flex justify-center items-center px-[30px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors
                     ${
                       selectedCategory === category
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-white text-[#161616] hover:bg-primary/10"
+                        ? "bg-[#FF93AD]"
+                        : "bg-white border-2 border-[#A29F95]"
                     }`}
                 >
                   {category}
@@ -57,12 +57,11 @@ const Blog = () => {
             </div>
 
             {/* Sub Categories */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center items-start content-center gap-[10px] w-full max-w-[1200px] mx-auto">
               {SUB_CATEGORIES.map((category) => (
                 <button
                   key={category}
-                  className="px-6 py-3 rounded-full text-[16px] leading-[21px] font-semibold 
-                           bg-white text-[#161616] hover:bg-primary/10 transition-colors"
+                  className="flex justify-center items-center px-[30px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] bg-white border-2 border-[#A29F95]"
                 >
                   {category}
                 </button>

@@ -3,7 +3,8 @@ import { BlogCard } from "./BlogCard";
 interface BlogPost {
   id: number;
   image: string;
-  readTime: string;
+  readTime?: string;
+  content: string;
   tags: string[];
   title: string;
 }

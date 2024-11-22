@@ -38,3 +38,9 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Custom styles for floating menu */
+.nav-floating {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

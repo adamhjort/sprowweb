@@ -1,35 +1,59 @@
 import { Button } from "@/components/ui/button";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-primary">Sprow</div>
-          <div className="hidden md:flex space-x-6">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Pricing</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Resources</a>
-          </div>
-          <div className="flex space-x-4">
-            <Button variant="ghost">Login</Button>
-            <Button>Sign up</Button>
+      {/* Navigation - Floating */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+        <div className={`container mx-auto px-6 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
+          <div className="flex justify-between items-center h-[70px]">
+            <div className="text-2xl font-bold text-primary">Sprow</div>
+            <div className="hidden md:flex space-x-6">
+              <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
+              <a href="#" className="text-foreground hover:text-primary transition-colors">Pricing</a>
+              <a href="#" className="text-foreground hover:text-primary transition-colors">Resources</a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Button variant="ghost">Request demo</Button>
+              <Button variant="ghost">Login</Button>
+              <Button>Sign up</Button>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
-          Empowering Teams.<br />
-          Elevating Leaders.
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up">
-          Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
-        </p>
-        <Button size="lg" className="animate-fade-up">Sign up</Button>
+      {/* Hero Section with Background */}
+      <section className="relative min-h-screen">
+        <div 
+          className="absolute inset-0 bg-center bg-cover z-0"
+          style={{
+            backgroundImage: "url('/lovable-uploads/42408ce7-50a0-4bcf-88a9-912675f98446.png')",
+            opacity: 0.1
+          }}
+        />
+        <div className="relative z-10 container mx-auto px-4 pt-40 pb-20 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
+            Empowering Teams.<br />
+            Elevating Leaders.
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up">
+            Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
+          </p>
+          <Button size="lg" className="animate-fade-up">Sign up</Button>
+        </div>
       </section>
 
       {/* Trusted By Section */}
@@ -44,16 +68,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Why Sprow Section */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-16">Why Sprow</h2>
         <div className="grid md:grid-cols-3 gap-12">
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="Platform" 
-                className="w-full h-48 object-cover rounded-lg"
+                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
+                alt="A Unified Platform" 
+                className="w-full h-48 object-contain rounded-lg"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4">A Unified Platform</h3>
@@ -62,9 +86,9 @@ const Index = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
-                alt="AI Growth" 
-                className="w-full h-48 object-cover rounded-lg"
+                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
+                alt="AI-powered Growth" 
+                className="w-full h-48 object-contain rounded-lg"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4">AI-powered Growth</h3>
@@ -73,33 +97,13 @@ const Index = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                alt="Success" 
-                className="w-full h-48 object-cover rounded-lg"
+                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
+                alt="Long-term Success" 
+                className="w-full h-48 object-contain rounded-lg"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4">Long-term Success</h3>
             <p className="text-muted-foreground">Focus on sustainable growth and development for your team.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="bg-muted py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <p className="text-lg mb-6 italic">
-                "Sprow has completely changed how we manage employee growth. Instead of chasing after data from multiple sources, everything is in one place."
-              </p>
-              <div className="flex items-center">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="Testimonial" className="w-12 h-12 rounded-full mr-4" />
-                <div>
-                  <p className="font-semibold">Man Manager</p>
-                  <p className="text-sm text-muted-foreground">HR Partner, Hewlett Packard</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

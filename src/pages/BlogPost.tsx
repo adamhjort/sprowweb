@@ -33,7 +33,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background pt-20 md:pt-32 pb-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-[100px]">
         <div className="max-w-[1000px] mx-auto bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden">
           {/* Header Image */}
           <div 

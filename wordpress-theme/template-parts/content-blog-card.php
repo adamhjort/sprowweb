@@ -1,5 +1,6 @@
 <?php
 $categories = get_the_category();
+$tags = get_the_tags();
 $read_time = get_post_meta(get_the_ID(), 'read_time', true) ?: '5 min read';
 ?>
 
@@ -15,12 +16,13 @@ $read_time = get_post_meta(get_the_ID(), 'read_time', true) ?: '5 min read';
     <?php endif; ?>
 
     <div class="p-[20px] space-y-4">
-        <?php if (!empty($categories)) : ?>
+        <?php if ($tags) : ?>
             <div class="flex flex-wrap gap-2">
-                <?php foreach ($categories as $category) : ?>
-                    <span class="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-3 py-1.5 text-[12px] font-semibold">
-                        <?php echo esc_html($category->name); ?>
-                    </span>
+                <?php foreach ($tags as $tag) : ?>
+                    <a href="<?php echo get_tag_link($tag->term_id); ?>" 
+                       class="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-3 py-1.5 text-[12px] font-semibold hover:bg-[#FFB1C3] transition-colors">
+                        <?php echo esc_html($tag->name); ?>
+                    </a>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>

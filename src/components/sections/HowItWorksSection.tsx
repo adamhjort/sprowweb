@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { CarouselSlide } from '../how-it-works/CarouselSlide';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -108,21 +103,36 @@ export const HowItWorksSection = () => {
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
       
       <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
-        <TabsList className="grid w-full grid-cols-3 mb-8">
-          <TabsTrigger value="hr">For HR</TabsTrigger>
-          <TabsTrigger value="managers">For Managers</TabsTrigger>
-          <TabsTrigger value="employees">For Employees</TabsTrigger>
+        <TabsList className="inline-flex h-10 items-center justify-center rounded-full bg-muted p-1">
+          <TabsTrigger 
+            value="hr" 
+            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+          >
+            For HR
+          </TabsTrigger>
+          <TabsTrigger 
+            value="managers" 
+            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+          >
+            For Managers
+          </TabsTrigger>
+          <TabsTrigger 
+            value="employees" 
+            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+          >
+            For Employees
+          </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="hr" className="mt-0">
+        <TabsContent value="hr" className="mt-8">
           <CarouselSlide {...hrData} />
         </TabsContent>
         
-        <TabsContent value="managers" className="mt-0">
+        <TabsContent value="managers" className="mt-8">
           <CarouselSlide {...managerData} />
         </TabsContent>
         
-        <TabsContent value="employees" className="mt-0">
+        <TabsContent value="employees" className="mt-8">
           <CarouselSlide {...employeeData} />
         </TabsContent>
       </Tabs>

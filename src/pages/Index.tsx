@@ -115,30 +115,32 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Footer */}
-      <footer className="flex flex-row justify-between items-center py-5 pr-5 pl-0 w-[1440px] h-[113px] bg-white">
+
+      {/* Footer */}
+      <footer className="flex flex-row justify-between items-center py-5 pr-5 pl-0 w-full min-w-[320px] max-w-[1440px] h-auto md:h-[113px] bg-white">
         {/* Sitemap */}
-        <div className="flex flex-row items-end gap-[50px] w-[559px] h-[73px]">
+        <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-[50px] w-full md:w-[559px]">
           {/* Logo */}
           <div className="w-[134px] h-[70px]">
             <div className="text-2xl font-bold text-primary">Sprow</div>
           </div>
 
           {/* Menu */}
-          <div className="flex flex-col items-start gap-[5px] w-[78px] h-[73px]">
+          <div className="flex flex-col items-start gap-[5px]">
             <a href="/about" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">About</a>
             <a href="/pricing" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
             <a href="/resources" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Resources</a>
           </div>
 
           {/* Terms and policy */}
-          <div className="flex flex-col items-start gap-[5px] w-[102px] h-[73px]">
+          <div className="flex flex-col items-start gap-[5px]">
             <a href="/terms" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
             <a href="/privacy" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
             <a href="/contact" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Contact</a>
           </div>
 
           {/* Login */}
-          <div className="flex flex-col items-start gap-[5px] w-[95px] h-[73px]">
+          <div className="flex flex-col items-start gap-[5px]">
             <a href="/signup" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
             <a href="/demo" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
             <a href="/login" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Login</a>
@@ -146,9 +148,9 @@ const Index = () => {
         </div>
 
         {/* Social links */}
-        <div className="flex flex-row items-end gap-[31px] w-[303px] h-[24px]">
+        <div className="hidden md:flex flex-row items-end gap-[31px] w-[303px]">
           {/* Social Icons */}
-          <div className="flex flex-row items-center gap-[10px] w-[58px] h-[24px]">
+          <div className="flex flex-row items-center gap-[10px]">
             <a href="https://linkedin.com" className="text-[#161616] hover:text-primary transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
@@ -161,7 +163,7 @@ const Index = () => {
           <div className="w-[20px] h-0 rotate-90 border-2 border-[#161616] opacity-20" />
 
           {/* Made with love in Sweden */}
-          <div className="flex flex-row items-start gap-[5px] w-[183px] h-[24px]">
+          <div className="flex flex-row items-start gap-[5px]">
             <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">Made with</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D74949" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">in Sweden</span>

@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 
 const Index = () => {
   return (
@@ -111,62 +105,7 @@ const Index = () => {
       </section>
 
       {/* How it Works Section */}
-      <section className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
-        <Carousel className="max-w-4xl mx-auto">
-          <CarouselContent>
-            <CarouselItem>
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-center mb-8">For HR</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Align development goals</h4>
-                    <p className="text-muted-foreground">HR can work with managers and employees to set clear development goals.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Track progress</h4>
-                    <p className="text-muted-foreground">Monitor employee development and ensure goals are being met.</p>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-
-            <CarouselItem>
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-center mb-8">For managers</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Support your team</h4>
-                    <p className="text-muted-foreground">Get insights and recommendations to better support your team's growth.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Drive engagement</h4>
-                    <p className="text-muted-foreground">Keep your team motivated and engaged with personalized development plans.</p>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-
-            <CarouselItem>
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-center mb-8">For employees</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Set clear goals</h4>
-                    <p className="text-muted-foreground">Define your career path and track your progress along the way.</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">Get feedback</h4>
-                    <p className="text-muted-foreground">Receive regular feedback and guidance to support your growth.</p>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </section>
+      <HowItWorksSection />
 
       {/* Footer */}
       <footer className="border-t">

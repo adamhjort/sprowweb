@@ -15,8 +15,8 @@ interface BlogCardProps {
 
 export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
   const imageClasses = {
-    featured: 'h-[572px] w-full',
-    horizontal: 'h-full w-[50%]',
+    featured: 'h-[400px] w-full', // Reduced from 572px
+    horizontal: 'h-full w-1/2', // Using Tailwind's w-1/2 for exact 50% width
     default: 'h-[258px] w-full'
   }[variant];
 

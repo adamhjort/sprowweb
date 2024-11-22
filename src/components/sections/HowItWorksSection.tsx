@@ -99,13 +99,19 @@ const hrData = {
 export const HowItWorksSection = () => {
   const [activeTab, setActiveTab] = React.useState("hr");
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: false, 
-    dragFree: true 
+    loop: false,
+    dragFree: true,
+    skipSnaps: false,
+    align: 'center',
+    containScroll: 'trimSnaps'
   });
 
   React.useEffect(() => {
     if (emblaApi) {
-      emblaApi.scrollTo(["hr", "managers", "employees"].indexOf(activeTab));
+      emblaApi.scrollTo(["hr", "managers", "employees"].indexOf(activeTab), {
+        duration: 500,
+        easing: (t) => t * (2 - t) // Ease out quadratic
+      });
     }
   }, [activeTab, emblaApi]);
 
@@ -113,10 +119,13 @@ export const HowItWorksSection = () => {
     if (emblaApi) {
       emblaApi.on('select', () => {
         const index = emblaApi.selectedScrollSnap();
-        setActiveTab(["hr", "managers", "employees"][index]);
+        const newTab = ["hr", "managers", "employees"][index];
+        if (newTab !== activeTab) {
+          setActiveTab(newTab);
+        }
       });
     }
-  }, [emblaApi]);
+  }, [emblaApi, activeTab]);
 
   return (
     <section className="container mx-auto px-4 py-20">
@@ -156,15 +165,15 @@ export const HowItWorksSection = () => {
 
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex">
-              <TabsContent value="hr" className="flex-[0_0_100%] min-w-0">
+              <TabsContent value="hr" className="flex-[0_0_100%] min-w-0 transition-transform duration-500">
                 <CarouselSlide {...hrData} />
               </TabsContent>
               
-              <TabsContent value="managers" className="flex-[0_0_100%] min-w-0">
+              <TabsContent value="managers" className="flex-[0_0_100%] min-w-0 transition-transform duration-500">
                 <CarouselSlide {...managerData} />
               </TabsContent>
               
-              <TabsContent value="employees" className="flex-[0_0_100%] min-w-0">
+              <TabsContent value="employees" className="flex-[0_0_100%] min-w-0 transition-transform duration-500">
                 <CarouselSlide {...employeeData} />
               </TabsContent>
             </div>

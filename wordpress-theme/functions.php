@@ -12,8 +12,17 @@ function sprow_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_scripts');
 
-// Add REST API support for tags
+// Add REST API support for tags and read time
 function sprow_register_rest_fields() {
+    // Register read time field
+    register_rest_field('post', 'readTime', array(
+        'get_callback' => function($post) {
+            $read_time = get_post_meta($post['id'], 'read_time', true);
+            return !empty($read_time) ? $read_time : '5 min read';
+        }
+    ));
+
+    // Register tags field
     register_rest_field('post', 'tags', array(
         'get_callback' => function($post) {
             $tags = wp_get_post_tags($post['id']);
@@ -22,6 +31,13 @@ function sprow_register_rest_fields() {
                 $tag_names[] = $tag->name;
             }
             return $tag_names;
+        }
+    ));
+
+    // Register featured image field
+    register_rest_field('post', 'image', array(
+        'get_callback' => function($post) {
+            return get_the_post_thumbnail_url($post['id'], 'large');
         }
     ));
 }
@@ -33,13 +49,15 @@ function sprow_get_filtered_posts($request) {
     $tag = isset($params['tag']) ? $params['tag'] : '';
     $page = isset($params['page']) ? intval($params['page']) : 1;
     $per_page = isset($params['per_page']) ? intval($params['per_page']) : 4;
+    $exclude_id = isset($params['exclude_id']) ? intval($params['exclude_id']) : 0;
 
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => $per_page,
         'paged' => $page,
         'orderby' => 'date',
-        'order' => 'DESC'
+        'order' => 'DESC',
+        'post__not_in' => $exclude_id ? array($exclude_id) : array()
     );
 
     if (!empty($tag)) {
@@ -60,7 +78,9 @@ function sprow_get_filtered_posts($request) {
             'title' => $post->post_title,
             'image' => get_the_post_thumbnail_url($post->ID, 'large'),
             'readTime' => get_post_meta($post->ID, 'read_time', true) ?: '5 min read',
-            'tags' => $tag_names
+            'tags' => $tag_names,
+            'excerpt' => get_the_excerpt($post->ID),
+            'date' => get_the_date('F j, Y', $post->ID)
         );
     }
 
@@ -80,6 +100,38 @@ add_action('rest_api_init', function() {
         'permission_callback' => '__return_true'
     ));
 });
+
+// Add custom meta box for read time
+function sprow_add_read_time_meta_box() {
+    add_meta_box(
+        'read_time_meta_box',
+        'Read Time',
+        'sprow_read_time_meta_box_html',
+        'post',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'sprow_add_read_time_meta_box');
+
+function sprow_read_time_meta_box_html($post) {
+    $value = get_post_meta($post->ID, 'read_time', true);
+    ?>
+    <label for="read_time">Read Time:</label>
+    <input type="text" id="read_time" name="read_time" value="<?php echo esc_attr($value); ?>" placeholder="e.g., 5 min read">
+    <?php
+}
+
+function sprow_save_read_time_meta_box($post_id) {
+    if (array_key_exists('read_time', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'read_time',
+            sanitize_text_field($_POST['read_time'])
+        );
+    }
+}
+add_action('save_post', 'sprow_save_read_time_meta_box');
 
 // Include the Recent Posts Widget
 require get_template_directory() . '/inc/widgets/recent-posts-widget.php';

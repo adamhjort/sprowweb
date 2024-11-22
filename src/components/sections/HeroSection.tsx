@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen">
-      <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-20 text-center">
+    <section className="relative min-h-screen flex items-center">
+      <div className="relative z-10 container mx-auto px-4 pb-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
           Empowering Teams.<br />
           Elevating Leaders.

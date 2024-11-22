@@ -103,22 +103,22 @@ export const HowItWorksSection = () => {
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
       
       <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
-        <TabsList className="inline-flex h-10 items-center justify-center rounded-full bg-muted p-1">
+        <TabsList className="inline-flex h-10 items-center justify-center rounded-full bg-muted p-1 space-x-2">
           <TabsTrigger 
             value="hr" 
-            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
           >
             For HR
           </TabsTrigger>
           <TabsTrigger 
             value="managers" 
-            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
           >
             For Managers
           </TabsTrigger>
           <TabsTrigger 
             value="employees" 
-            className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
           >
             For Employees
           </TabsTrigger>

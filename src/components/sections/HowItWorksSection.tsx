@@ -1,6 +1,8 @@
 import React from 'react';
 import { CarouselSlide } from '../how-it-works/CarouselSlide';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import useEmblaCarousel from 'embla-carousel-react';
 
 const employeeData = {
   title: "For employees",
@@ -97,45 +99,69 @@ const hrData = {
 
 export const HowItWorksSection = () => {
   const [activeTab, setActiveTab] = React.useState("hr");
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, draggable: true });
+
+  React.useEffect(() => {
+    if (emblaApi) {
+      emblaApi.scrollTo(["hr", "managers", "employees"].indexOf(activeTab));
+    }
+  }, [activeTab, emblaApi]);
+
+  React.useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        const index = emblaApi.selectedScrollSnap();
+        setActiveTab(["hr", "managers", "employees"][index]);
+      });
+    }
+  }, [emblaApi]);
 
   return (
     <section className="container mx-auto px-4 py-20">
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
       
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
-        <TabsList className="inline-flex h-10 items-center justify-center rounded-full bg-muted p-1 space-x-2">
-          <TabsTrigger 
-            value="hr" 
-            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-          >
-            For HR
-          </TabsTrigger>
-          <TabsTrigger 
-            value="managers" 
-            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-          >
-            For Managers
-          </TabsTrigger>
-          <TabsTrigger 
-            value="employees" 
-            className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
-          >
-            For Employees
-          </TabsTrigger>
-        </TabsList>
+      <div className="max-w-5xl mx-auto">
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
+          <div className="flex justify-center mb-8">
+            <TabsList className="inline-flex h-10 items-center justify-center rounded-full bg-muted p-1 space-x-2">
+              <TabsTrigger 
+                value="hr" 
+                className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+              >
+                For HR
+              </TabsTrigger>
+              <TabsTrigger 
+                value="managers" 
+                className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+              >
+                For Managers
+              </TabsTrigger>
+              <TabsTrigger 
+                value="employees" 
+                className="rounded-full px-6 py-2 border border-primary data-[state=active]:border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+              >
+                For Employees
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
-        <TabsContent value="hr" className="mt-8">
-          <CarouselSlide {...hrData} />
-        </TabsContent>
-        
-        <TabsContent value="managers" className="mt-8">
-          <CarouselSlide {...managerData} />
-        </TabsContent>
-        
-        <TabsContent value="employees" className="mt-8">
-          <CarouselSlide {...employeeData} />
-        </TabsContent>
-      </Tabs>
+          <div ref={emblaRef} className="overflow-hidden">
+            <div className="flex">
+              <TabsContent value="hr" className="flex-[0_0_100%] min-w-0">
+                <CarouselSlide {...hrData} />
+              </TabsContent>
+              
+              <TabsContent value="managers" className="flex-[0_0_100%] min-w-0">
+                <CarouselSlide {...managerData} />
+              </TabsContent>
+              
+              <TabsContent value="employees" className="flex-[0_0_100%] min-w-0">
+                <CarouselSlide {...employeeData} />
+              </TabsContent>
+            </div>
+          </div>
+        </Tabs>
+      </div>
     </section>
   );
 };

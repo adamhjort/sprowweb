@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -103,6 +104,9 @@ const Index = () => {
 
       {/* How it Works Section */}
       <HowItWorksSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Footer */}
       <footer className="border-t">

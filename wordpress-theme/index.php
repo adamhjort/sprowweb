@@ -1,46 +1,57 @@
 <?php get_header(); ?>
 
 <main class="min-h-screen bg-background">
-    <!-- Hero Section -->
-    <section class="container mx-auto px-4 py-20 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
-            <?php echo get_theme_mod('hero_title', 'Empowering Teams.<br>Elevating Leaders.'); ?>
-        </h1>
-        <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up">
-            <?php echo get_theme_mod('hero_description', 'Sprow is an AI-powered platform that connects employees and managers for seamless growth.'); ?>
-        </p>
-        <button class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors animate-fade-up">
-            <?php echo get_theme_mod('hero_button_text', 'Sign up'); ?>
-        </button>
-    </section>
-
-    <!-- Blog Posts -->
-    <section class="container mx-auto px-4 py-12">
-        <div class="grid md:grid-cols-3 gap-8">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="aspect-video">
-                            <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-4">
-                            <a href="<?php the_permalink(); ?>" class="hover:text-primary transition-colors">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                        <div class="text-muted-foreground mb-4">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="text-primary hover:text-primary-hover transition-colors">
-                            Read more →
-                        </a>
-                    </div>
-                </article>
-            <?php endwhile; endif; ?>
+    <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden">
+        <div class="absolute inset-0 w-full" style="height: 1500px;">
+            <img 
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/background-pattern.png"
+                alt="Background pattern"
+                class="w-full h-full object-cover opacity-50"
+                style="object-position: center 100px; object-fit: cover; transform: scale(1.2);"
+            />
         </div>
-    </section>
+
+        <div class="container mx-auto px-4 pt-32 pb-20 relative">
+            <div class="max-w-[1274px] mx-auto">
+                <!-- Header -->
+                <div class="mb-16 space-y-6">
+                    <h1 class="text-[64px] leading-[83px] font-bold text-[#161616] font-['Chakra_Petch']">
+                        <?php echo get_the_title(); ?>
+                    </h1>
+                    <p class="text-[20px] leading-[26px] text-[#161616] max-w-[800px]">
+                        Explore Sprow's blog for expert insights on HR strategies, employee engagement, and team
+                        management. Stay updated on the latest trends in workplace culture, leadership
+                        development, and AI-powered tools to help your organization and employees grow.
+                    </p>
+
+                    <!-- Categories -->
+                    <div class="flex flex-wrap gap-[10px]">
+                        <?php
+                        $categories = get_categories();
+                        foreach($categories as $category) : ?>
+                            <a href="<?php echo get_category_link($category->term_id); ?>"
+                               class="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
+                                    <?php echo is_category($category->term_id) ? 'bg-[#FF93AD]' : 'bg-white border border-[#A29F95]'; ?>">
+                                <?php echo $category->name; ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <!-- Blog Posts Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php get_template_part('template-parts/content', 'blog-card'); ?>
+                    <?php endwhile; endif; ?>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center">
+                    <?php the_posts_pagination(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>

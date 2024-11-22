@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { useEffect, useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,34 +17,59 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const MobileMenu = () => (
+    <div className="flex flex-col space-y-4 pt-4">
+      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">About</a>
+      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Pricing</a>
+      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Resources</a>
+      <hr className="my-2" />
+      <Button variant="ghost" className="justify-start">Request demo</Button>
+      <Button variant="ghost" className="justify-start">Login</Button>
+      <Button className="justify-start">Sign up</Button>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-background">
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
-        <div className={`container mx-auto px-6 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
+        <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
           <div className="flex justify-between items-center h-[70px]">
             <div className="text-2xl font-bold text-primary">Sprow</div>
+            
             <div className="hidden md:flex space-x-6">
               <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">Pricing</a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">Resources</a>
             </div>
-            <div className="flex items-center space-x-4">
+            
+            <div className="hidden md:flex items-center space-x-4">
               <Button variant="ghost">Request demo</Button>
               <Button variant="ghost">Login</Button>
               <Button>Sign up</Button>
             </div>
+
+            <Sheet>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <MobileMenu />
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="hero-background relative min-h-screen">
-        <div className="relative z-10 container mx-auto px-4 pt-40 pb-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
+        <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-20 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
             Empowering Teams.<br />
             Elevating Leaders.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up px-4">
             Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
           </p>
           <Button size="lg" className="animate-fade-up">Sign up</Button>
@@ -50,31 +77,31 @@ const Index = () => {
       </section>
 
       {/* Trusted By Section */}
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-center text-2xl font-semibold mb-10">Trusted by</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 justify-items-center">
+          <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 justify-items-center">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-12 w-32 bg-gray-200 rounded animate-pulse"></div>
+              <div key={i} className="h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded animate-pulse"></div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Sprow Section */}
-      <section className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-16">Why Sprow</h2>
-        <div className="grid md:grid-cols-3 gap-12">
+      <section className="container mx-auto px-4 py-16 md:py-20">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16">Why Sprow</h2>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           <div className="text-center">
             <div className="mb-6">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="A Unified Platform for Employees and Managers" 
-                className="w-full h-48 object-contain"
+                className="w-full h-36 md:h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">A Unified Platform for Employees and Managers</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg md:text-xl font-semibold mb-4">A Unified Platform for Employees and Managers</h3>
+            <p className="text-sm md:text-base text-muted-foreground">
               Sprow brings everything together in one platform, designed specifically for employees and managers. From professional growth to leadership development, Sprow ensures that every part of the journey is connected, making collaboration and progress seamless.
             </p>
           </div>
@@ -83,11 +110,11 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="AI-powered Growth and leadership" 
-                className="w-full h-48 object-contain"
+                className="w-full h-36 md:h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">AI-powered Growth and leadership</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg md:text-xl font-semibold mb-4">AI-powered Growth and leadership</h3>
+            <p className="text-sm md:text-base text-muted-foreground">
               Sprow uses AI to deliver personalized recommendations and insights that drive meaningful discussions. By understanding each individual's unique context, Sprow helps guide both employees and managers toward their full potential.
             </p>
           </div>
@@ -96,11 +123,11 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="Focused on long term success" 
-                className="w-full h-48 object-contain"
+                className="w-full h-36 md:h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">Focused on long term success</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Focused on long term success</h3>
+            <p className="text-sm md:text-base text-muted-foreground">
               Sprow empowers both employees and managers with tools that foster long-term growth. Whether you're starting a team or advancing in your role, Sprow supports your journey to success in an ever-changing workplace.
             </p>
           </div>
@@ -114,38 +141,40 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Footer */}
-      <footer className="flex flex-row justify-between items-center py-5 pr-5 pl-0 w-full min-w-[320px] max-w-[1440px] h-auto md:h-[113px] bg-white">
+      <footer className="flex flex-col md:flex-row justify-between items-start md:items-center py-8 md:py-5 px-4 md:pr-5 md:pl-0 w-full min-w-[320px] max-w-[1440px] h-auto md:h-[113px] bg-white">
         {/* Sitemap */}
-        <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-[50px] w-full md:w-[559px]">
-          {/* Logo */}
-          <div className="w-[134px] h-[70px]">
-            <div className="text-2xl font-bold text-primary">Sprow</div>
-          </div>
+        <div className="flex flex-col w-full md:w-[559px] space-y-8 md:space-y-0 mb-8 md:mb-0">
+          <div className="grid grid-cols-2 md:flex md:flex-row items-start md:items-end gap-8 md:gap-[50px]">
+            {/* Logo */}
+            <div className="col-span-2 w-[134px] h-[70px]">
+              <div className="text-2xl font-bold text-primary">Sprow</div>
+            </div>
 
-          {/* Menu */}
-          <div className="flex flex-col items-start gap-[5px]">
-            <a href="/about" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">About</a>
-            <a href="/pricing" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
-            <a href="/resources" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Resources</a>
-          </div>
+            {/* Menu */}
+            <div className="flex flex-col items-start gap-[5px]">
+              <a href="/about" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">About</a>
+              <a href="/pricing" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
+              <a href="/resources" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Resources</a>
+            </div>
 
-          {/* Terms and policy */}
-          <div className="flex flex-col items-start gap-[5px]">
-            <a href="/terms" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
-            <a href="/privacy" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
-            <a href="/contact" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Contact</a>
-          </div>
+            {/* Terms and policy */}
+            <div className="flex flex-col items-start gap-[5px]">
+              <a href="/terms" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
+              <a href="/privacy" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
+              <a href="/contact" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Contact</a>
+            </div>
 
-          {/* Login */}
-          <div className="flex flex-col items-start gap-[5px]">
-            <a href="/signup" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
-            <a href="/demo" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
-            <a href="/login" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Login</a>
+            {/* Login */}
+            <div className="flex flex-col items-start gap-[5px]">
+              <a href="/signup" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
+              <a href="/demo" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
+              <a href="/login" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Login</a>
+            </div>
           </div>
         </div>
 
         {/* Social links */}
-        <div className="hidden md:flex flex-row items-center gap-[31px] w-[303px]">
+        <div className="flex flex-row items-center gap-[31px] w-full md:w-[303px] border-t md:border-t-0 pt-8 md:pt-0">
           {/* Social Icons */}
           <div className="flex flex-row items-center gap-[10px]">
             <a href="https://linkedin.com" className="text-[#161616] hover:text-primary transition-colors">

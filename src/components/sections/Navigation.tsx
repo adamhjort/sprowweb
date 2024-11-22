@@ -23,19 +23,24 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
       <div className={`max-w-[1420px] w-full mx-auto transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
         <div className="flex justify-between items-center h-[70px] px-4 max-w-full">
-          <div className="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center shrink-0">Sprow</div>
-          
-          <div className="hidden lg:flex space-x-[30px] w-[238px] items-center shrink-0">
-            <a href="#" className="text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
-            <a href="#" className="text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
-            <a href="#" className="text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
+          {/* Left column - Logo */}
+          <div className="flex-1 flex justify-start">
+            <div className="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center">Sprow</div>
           </div>
           
-          <div className="hidden lg:flex items-center space-x-[30px] w-[350px] shrink-0">
-            <Button variant="ghost" className="text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap">Request demo</Button>
-            <div className="w-[20px] h-0 border-2 border-[#A29F95] rotate-90"></div>
-            <Button variant="ghost" className="text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap">Login</Button>
-            <Button className="w-[100px] min-w-[100px] h-[41px] bg-[#FF93AD] hover:bg-primary-hover rounded-[10px] text-[16px] leading-[21px] font-semibold font-['Chakra_Petch'] text-[#161616]">
+          {/* Middle column - Navigation links */}
+          <div className="hidden lg:flex flex-1 justify-center items-center space-x-6">
+            <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
+            <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
+            <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
+          </div>
+          
+          {/* Right column - Actions */}
+          <div className="hidden lg:flex flex-1 justify-end items-center space-x-4">
+            <Button variant="ghost" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Request demo</Button>
+            <div className="w-[1px] h-4 bg-[#A29F95] opacity-50"></div>
+            <Button variant="ghost" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Login</Button>
+            <Button className="h-[35px] bg-[#FF93AD] hover:bg-primary-hover rounded-[10px] text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4">
               Sign up
             </Button>
           </div>

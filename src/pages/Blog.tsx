@@ -60,7 +60,7 @@ const Blog = () => {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`flex justify-center items-center px-[20px] md:px-[30px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
+                    className={`flex justify-center items-center px-[15px] md:px-[30px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
                       ${
                         selectedCategory === category
                           ? "bg-[#FF93AD]"
@@ -78,7 +78,7 @@ const Blog = () => {
                   <button
                     key={category}
                     onClick={() => setSelectedSubCategory(category === selectedSubCategory ? null : category)}
-                    className={`flex justify-center items-center px-[20px] md:px-[30px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
+                    className={`flex justify-center items-center px-[15px] md:px-[30px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
                       ${
                         selectedSubCategory === category
                           ? "bg-[#FF93AD] border-2 border-[#FF93AD]"

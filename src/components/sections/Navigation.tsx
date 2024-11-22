@@ -32,7 +32,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
           <div className="hidden lg:flex justify-center items-center gap-8">
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
             <a href="/pricing" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
-            <a href="/blog" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
+            <a href="/blog" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Blog</a>
           </div>
           
           {/* Right column - Actions */}

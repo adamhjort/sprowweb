@@ -132,22 +132,22 @@ export const HowItWorksSection = () => {
       <div className="max-w-5xl mx-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
-            <TabsList className="inline-flex flex-col md:flex-row h-auto md:h-[46px] items-center justify-center rounded-none bg-transparent p-0 gap-[10px] w-full md:w-auto">
+            <TabsList className="flex flex-wrap justify-center gap-[10px] w-full max-w-[1200px]">
               <TabsTrigger 
                 value="hr" 
-                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap data-[state=active]:bg-[#FF93AD] data-[state=inactive]:bg-white data-[state=inactive]:border-2 data-[state=inactive]:border-[#A29F95]"
               >
                 For HR
               </TabsTrigger>
               <TabsTrigger 
                 value="managers" 
-                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap data-[state=active]:bg-[#FF93AD] data-[state=inactive]:bg-white data-[state=inactive]:border-2 data-[state=inactive]:border-[#A29F95]"
               >
                 For Managers
               </TabsTrigger>
               <TabsTrigger 
                 value="employees" 
-                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap data-[state=active]:bg-[#FF93AD] data-[state=inactive]:bg-white data-[state=inactive]:border-2 data-[state=inactive]:border-[#A29F95]"
               >
                 For Employees
               </TabsTrigger>

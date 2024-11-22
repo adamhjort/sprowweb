@@ -29,7 +29,7 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
   return (
     <Link 
       to={`/blog/${post.id}`} 
-      className={`bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden h-full ${containerClasses}`}
+      className={`bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden h-full ${containerClasses} transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg`}
     >
       <div 
         className={`p-5 relative bg-cover bg-center ${imageClasses}`}

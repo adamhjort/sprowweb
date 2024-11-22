@@ -102,11 +102,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <HowItWorksSection />
-
       {/* Testimonials Section */}
       <TestimonialsSection />
+
+      {/* How it Works Section */}
+      <HowItWorksSection />
 
       {/* Footer */}
       <footer className="border-t">

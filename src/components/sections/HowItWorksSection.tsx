@@ -126,14 +126,7 @@ export const HowItWorksSection = () => {
   }, [emblaApi, activeTab]);
 
   return (
-    <section className="container mx-auto px-4 py-20">
-      <div 
-        className="w-full h-64 bg-contain bg-center bg-no-repeat mb-16"
-        style={{
-          backgroundImage: "url('/lovable-uploads/dce3fe16-4327-490b-8bdf-9c9a25cfe066.png')"
-        }}
-      />
-      
+    <section className="container mx-auto px-4 py-20 bg-background">
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
       
       <div className="max-w-5xl mx-auto">

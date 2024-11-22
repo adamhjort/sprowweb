@@ -1,4 +1,4 @@
-import { BlogCard } from "./BlogCard";
+import { BlogGrid } from "./BlogGrid";
 
 interface BlogPost {
   id: number;
@@ -51,15 +51,14 @@ export const RecentBlogPosts = ({ currentPostId, limit = 4 }: RecentBlogPostsPro
     : allPosts;
 
   const recentPosts = filteredPosts.slice(0, limit);
+  
+  // Use the first post as featured and the rest as other posts
+  const [featuredPost, ...otherPosts] = recentPosts;
 
   return (
     <div className="w-full">
       <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
-        {recentPosts.map((post) => (
-          <BlogCard key={post.id} post={post} />
-        ))}
-      </div>
+      <BlogGrid featuredPost={featuredPost} otherPosts={otherPosts} />
     </div>
   );
 };

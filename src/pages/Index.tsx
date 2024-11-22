@@ -42,7 +42,7 @@ const Index = () => {
 
         {/* Trusted By Section */}
         <section className="relative py-8 max-w-[1054px] mx-auto px-5">
-          <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
+          <h2 className="text-center text-[30px] font-semibold leading-[39px] font-['Chakra_Petch'] mb-8 md:mb-10">Trusted by</h2>
           <div className="overflow-hidden">
             <div className="flex animate-[slide_20s_linear_infinite] gap-6 md:gap-8">
               {[1, 2, 3, 4, 5].map((i) => (
@@ -128,9 +128,9 @@ const Index = () => {
 
             {/* Menu */}
             <div className="flex flex-col items-start gap-[5px]">
-              <a href="/about" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">About</a>
-              <a href="/pricing" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
-              <a href="/resources" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Resources</a>
+              <a href="/about" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">About</a>
+              <a href="/pricing" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Pricing</a>
+              <a href="/resources" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Resources</a>
             </div>
 
             {/* Terms and policy */}
@@ -162,7 +162,7 @@ const Index = () => {
           </div>
 
           {/* Divider */}
-          <div className="w-[20px] h-0 rotate-90 border-2 border-[#161616] opacity-20" />
+          <div className="w-[1px] h-4 bg-[#A29F95] opacity-50" />
 
           {/* Made with love in Sweden */}
           <div className="flex flex-row items-center gap-[5px]">

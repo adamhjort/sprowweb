@@ -99,7 +99,10 @@ const hrData = {
 
 export const HowItWorksSection = () => {
   const [activeTab, setActiveTab] = React.useState("hr");
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, draggable: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: false, 
+    dragFree: true 
+  });
 
   React.useEffect(() => {
     if (emblaApi) {

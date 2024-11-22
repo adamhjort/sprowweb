@@ -11,6 +11,13 @@ function sprow_theme_support() {
         'flex-height' => true,
         'flex-width'  => true,
     ));
+
+    // Register navigation menus
+    register_nav_menus(array(
+        'primary' => __('Primary Menu', 'sprow'),
+        'mobile' => __('Mobile Menu', 'sprow'),
+        'footer' => __('Footer Menu', 'sprow'),
+    ));
 }
 add_action('after_setup_theme', 'sprow_theme_support');
 

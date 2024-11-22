@@ -65,6 +65,14 @@ export default {
             transform: "translateX(0)",
           },
         },
+        "slide": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out",

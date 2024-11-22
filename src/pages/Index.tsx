@@ -39,10 +39,16 @@ const Index = () => {
         <section className="relative py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 justify-items-center">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded animate-pulse"></div>
-              ))}
+            <div className="overflow-hidden">
+              <div className="flex animate-[slide_20s_linear_infinite] gap-6 md:gap-8">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={`duplicate-${i}`} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -50,8 +56,9 @@ const Index = () => {
 
       {/* Why Sprow Section */}
       <section className="container mx-auto px-4 py-16 md:py-20">
+        <h2 className="text-3xl font-bold mb-12 text-center">Why Sprow</h2>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          <div className="text-center">
+          <div className="text-left">
             <div className="mb-6">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
@@ -64,7 +71,7 @@ const Index = () => {
               Sprow brings everything together in one platform, designed specifically for employees and managers. From professional growth to leadership development, Sprow ensures that every part of the journey is connected, making collaboration and progress seamless.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-left">
             <div className="mb-6">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
@@ -77,7 +84,7 @@ const Index = () => {
               Sprow uses AI to deliver personalized recommendations and insights that drive meaningful discussions. By understanding each individual's unique context, Sprow helps guide both employees and managers toward their full potential.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-left">
             <div className="mb-6">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 

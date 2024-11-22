@@ -69,7 +69,7 @@ export const CarouselSlide = ({ title, items }: CarouselSlideProps) => {
         {items[4] && (
           <div className="flex flex-row items-center">
             <div 
-              className="flex-1 flex flex-row items-start p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
+              className="w-[547px] flex flex-row items-start p-10 gap-5 bg-white rounded-[30px] min-h-[287px]"
             >
               <div className="flex flex-col items-start gap-0 w-[232px]">
                 <h4 className="text-[18px] leading-[23px] font-semibold mb-0 font-['Chakra_Petch'] text-black">

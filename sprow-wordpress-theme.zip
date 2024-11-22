@@ -1,13 +1,19 @@
 [Binary file containing:
-- functions.php
-- index.php
-- single.php
-- page.php
-- style.css
-- header.php
-- footer.php
-- screenshot.png
-- template-parts/content-blog-card.php
-- inc/widgets/recent-posts-widget.php
-- assets/css/tailwind.css
-- assets/js/main.js]
+wordpress-theme/functions.php
+wordpress-theme/index.php
+wordpress-theme/single.php
+wordpress-theme/page.php
+wordpress-theme/style.css
+wordpress-theme/header.php
+wordpress-theme/footer.php
+wordpress-theme/page-pricing.php
+wordpress-theme/screenshot.png
+wordpress-theme/template-parts/content-blog-card.php
+wordpress-theme/inc/widgets/recent-posts-widget.php
+wordpress-theme/inc/api/slider-endpoints.php
+wordpress-theme/inc/customizer/social-links.php
+wordpress-theme/inc/setup/theme-support.php
+wordpress-theme/inc/setup/assets.php
+wordpress-theme/inc/setup/post-types.php
+wordpress-theme/languages/sprow.pot
+wordpress-theme/tailwind.config.js]

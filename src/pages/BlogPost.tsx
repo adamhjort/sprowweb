@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { RecentBlogPosts } from "@/components/blog/RecentBlogPosts";
 import { useParams } from "react-router-dom";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -24,6 +25,10 @@ const BlogPost = () => {
       3. Upskilling and Talent Shortages
       With technology evolving at an unprecedented pace, HR departments are facing growing talent shortages in critical areas. By 2025, it's estimated that 85 million jobs could go unfilled due to the lack of qualified perspective. Continuous learning and development programs are based on upskilling employees for future roles, while addressing future shortages head-on. HR leaders must prioritize developing robust training frameworks to help their workforce adapt to changing demands.
     `,
+    author_info: {
+      name: "John Doe",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=John"
+    }
   };
 
   return (
@@ -68,6 +73,18 @@ const BlogPost = () => {
                   {paragraph}
                 </p>
               ))}
+            </div>
+
+            {/* Author */}
+            <div className="flex items-center gap-4 pt-8 border-t border-gray-200">
+              <Avatar className="h-12 w-12">
+                <AvatarImage src={post.author_info.avatar} alt={post.author_info.name} />
+                <AvatarFallback>{post.author_info.name.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-sm font-semibold text-[#161616]">Written by</p>
+                <h3 className="text-lg font-semibold text-[#161616]">{post.author_info.name}</h3>
+              </div>
             </div>
           </div>
         </div>

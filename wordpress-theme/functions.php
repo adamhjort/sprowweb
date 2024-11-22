@@ -12,7 +12,7 @@ function sprow_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_scripts');
 
-// Add REST API support for tags and read time
+// Add REST API support for tags, read time, and author
 function sprow_register_rest_fields() {
     // Register read time field
     register_rest_field('post', 'readTime', array(
@@ -38,6 +38,17 @@ function sprow_register_rest_fields() {
     register_rest_field('post', 'image', array(
         'get_callback' => function($post) {
             return get_the_post_thumbnail_url($post['id'], 'large');
+        }
+    ));
+
+    // Register author field
+    register_rest_field('post', 'author_info', array(
+        'get_callback' => function($post) {
+            $author_id = $post['author'];
+            return array(
+                'name' => get_the_author_meta('display_name', $author_id),
+                'avatar' => get_avatar_url($author_id, array('size' => 96))
+            );
         }
     ));
 }

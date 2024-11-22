@@ -5,6 +5,7 @@ const BlogPost = () => {
     readTime: "5 min read",
     tags: ["Management", "The Future of Work", "Culture"],
     title: "The Future of HR: Trends Shaping the Workforce of Tomorrow",
+    image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
     content: `
       The HR landscape is undergoing a significant transformation, driven by rapid technological advancements, shifting workforce demographics, and evolving employee expectations. As we move toward the future, HR professionals must adapt to these changes while maintaining the human element. Here are key predictions that will define the future of HR.
 
@@ -20,48 +21,62 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-32">
+    <div className="min-h-screen bg-background pt-32 pb-20">
       <div className="container mx-auto px-4">
-        {/* Tags and Read Time */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          <div className="bg-white rounded-full px-3 py-1 text-sm">
-            {post.readTime}
+        <div className="max-w-[1000px] mx-auto bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden">
+          {/* Header Image */}
+          <div 
+            className="w-full h-[411px] p-5 relative bg-cover bg-center"
+            style={{ backgroundImage: `url(${post.image})` }}
+          >
+            <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
+              <span className="text-[16px] leading-[21px] font-semibold text-black">
+                {post.readTime}
+              </span>
+            </div>
           </div>
-          {post.tags.map((tag) => (
-            <span 
-              key={tag} 
-              className="bg-pink-100 text-pink-800 rounded-full px-3 py-1 text-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-12">
-          {post.title}
-        </h1>
+          {/* Content Container */}
+          <div className="p-[50px_100px] space-y-5">
+            {/* Tags */}
+            <div className="flex flex-wrap gap-[10px] w-full max-w-[800px]">
+              {post.tags.map((tag) => (
+                <span 
+                  key={tag}
+                  className="bg-[#FFC8D5] text-black rounded-[20px] px-5 py-[10px] text-xs font-semibold flex items-center justify-center"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-        {/* Content */}
-        <div className="prose max-w-none mb-12 text-lg">
-          {post.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-6">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+            {/* Title */}
+            <h1 className="text-[30px] leading-[39px] font-semibold text-[#161616] max-w-[800px]">
+              {post.title}
+            </h1>
 
-        {/* Tags Section */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {post.tags.map((tag) => (
-            <Button
-              key={tag}
-              variant="outline"
-              className="rounded-full"
-            >
-              {tag}
-            </Button>
-          ))}
+            {/* Content */}
+            <div className="prose max-w-[800px] text-[16px] leading-[21px] font-[500] text-[#161616] font-['Chakra_Petch']">
+              {post.content.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="mb-6">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {/* Tags Section */}
+            <div className="flex flex-wrap gap-3 pt-8">
+              {post.tags.map((tag) => (
+                <Button
+                  key={tag}
+                  variant="outline"
+                  className="rounded-full"
+                >
+                  {tag}
+                </Button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

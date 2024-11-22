@@ -21,8 +21,8 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
-      <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
-        <div className="flex justify-between items-center h-[70px] max-w-[1420px] mx-auto px-4">
+      <div className={`max-w-[1420px] w-full mx-auto transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
+        <div className="flex justify-between items-center h-[70px] px-4 max-w-full">
           <div className="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center shrink-0">Sprow</div>
           
           <div className="hidden lg:flex space-x-[30px] w-[238px] items-center shrink-0">

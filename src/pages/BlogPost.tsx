@@ -73,8 +73,8 @@ const BlogPost = () => {
         </div>
 
         {/* Recent Posts */}
-        <div className="max-w-[1000px] mx-auto mt-12">
-          <RecentBlogPosts currentPostId={postId} />
+        <div className="max-w-[1274px] mx-auto mt-12">
+          <RecentBlogPosts currentPostId={postId} limit={4} />
         </div>
       </div>
     </div>

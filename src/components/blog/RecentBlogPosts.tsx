@@ -14,9 +14,15 @@ interface RecentBlogPostsProps {
   currentPostId?: number;
   limit?: number;
   selectedTag?: string;
+  selectedSubCategory?: string | null;
 }
 
-export const RecentBlogPosts = ({ currentPostId, limit = 4, selectedTag }: RecentBlogPostsProps) => {
+export const RecentBlogPosts = ({ 
+  currentPostId, 
+  limit = 4, 
+  selectedTag,
+  selectedSubCategory 
+}: RecentBlogPostsProps) => {
   const [displayLimit, setDisplayLimit] = useState(limit);
 
   // This would typically come from an API or database
@@ -81,7 +87,8 @@ export const RecentBlogPosts = ({ currentPostId, limit = 4, selectedTag }: Recen
 
   const filteredPosts = allPosts
     .filter(post => !currentPostId || post.id !== currentPostId)
-    .filter(post => !selectedTag || post.tags.includes(selectedTag));
+    .filter(post => !selectedTag || post.tags.includes(selectedTag))
+    .filter(post => !selectedSubCategory || post.tags.includes(selectedSubCategory));
 
   // Calculate how many complete sets of 4 posts we can show
   const numberOfSets = Math.floor(displayLimit / 4);

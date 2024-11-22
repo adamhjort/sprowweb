@@ -39,7 +39,7 @@ const Blog = () => {
             </p>
 
             {/* Main Categories */}
-            <div className="flex flex-wrap gap-[10px] w-full">
+            <div className="flex flex-wrap gap-[10px]">
               {CATEGORIES.map((category) => (
                 <button
                   key={category}
@@ -57,7 +57,7 @@ const Blog = () => {
             </div>
 
             {/* Sub Categories */}
-            <div className="flex flex-wrap gap-[10px] w-full">
+            <div className="flex flex-wrap gap-[10px]">
               {SUB_CATEGORIES.map((category) => (
                 <button
                   key={category}
@@ -65,7 +65,7 @@ const Blog = () => {
                   className={`flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
                     ${
                       selectedSubCategory === category
-                        ? "bg-[#FF93AD]"
+                        ? "bg-[#FF93AD] border-2 border-[#FF93AD]"
                         : "bg-white border-2 border-[#A29F95]"
                     }`}
                 >
@@ -76,7 +76,10 @@ const Blog = () => {
           </div>
 
           {/* Blog Posts Grid */}
-          <RecentBlogPosts selectedTag={selectedCategory === "All" ? undefined : selectedCategory} />
+          <RecentBlogPosts 
+            selectedTag={selectedCategory === "All" ? undefined : selectedCategory} 
+            selectedSubCategory={selectedSubCategory}
+          />
         </div>
       </div>
     </div>

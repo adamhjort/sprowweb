@@ -1,1 +1,13 @@
-[Binary file containing all the WordPress theme files]
+[Binary file containing:
+- functions.php
+- index.php
+- single.php
+- page.php
+- style.css
+- header.php
+- footer.php
+- screenshot.png
+- template-parts/content-blog-card.php
+- inc/widgets/recent-posts-widget.php
+- assets/css/tailwind.css
+- assets/js/main.js]

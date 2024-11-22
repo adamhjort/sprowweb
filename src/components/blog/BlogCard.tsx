@@ -16,7 +16,7 @@ interface BlogCardProps {
 export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
   const imageClasses = {
     featured: 'h-[572px] w-full',
-    horizontal: 'h-full w-[258px]',
+    horizontal: 'h-full w-[50%]',
     default: 'h-[258px] w-full'
   }[variant];
 
@@ -36,7 +36,7 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
         style={{ backgroundImage: `url(${post.image})` }}
       >
         <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
-          <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
+          <span className="text-[14px] leading-[18px] font-semibold text-[#161616]">
             {post.readTime}
           </span>
         </div>

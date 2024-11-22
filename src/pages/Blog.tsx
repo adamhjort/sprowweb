@@ -68,7 +68,7 @@ const Blog = () => {
         {/* Blog Posts Grid */}
         <div className="flex flex-col lg:flex-row justify-center items-start gap-[30px] max-w-[1274px] mx-auto">
           {/* Featured Post (Left Column) */}
-          <Link to={`/blog/${featuredPost.id}`} className="w-full lg:w-[536px] bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden">
+          <Link to={`/blog/${featuredPost.id}`} className="w-full lg:w-[536px] bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden h-full">
             <div 
               className="w-full h-[572px] p-[30px_20px] relative bg-cover bg-center rounded-t-[30px]"
               style={{ backgroundImage: `url(${featuredPost.image})` }}

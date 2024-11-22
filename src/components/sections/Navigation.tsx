@@ -22,21 +22,21 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
       <div className={`max-w-[1420px] w-full mx-auto transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
-        <div className="flex justify-between items-center h-[70px] px-4 max-w-full">
+        <div className="grid grid-cols-3 items-center h-[70px] px-4 max-w-full">
           {/* Left column - Logo */}
-          <div className="flex-1 flex justify-start">
+          <div className="flex justify-start">
             <div className="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center">Sprow</div>
           </div>
           
           {/* Middle column - Navigation links */}
-          <div className="hidden lg:flex flex-1 justify-center items-center space-x-6">
+          <div className="hidden lg:flex justify-center items-center space-x-6">
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
           </div>
           
           {/* Right column - Actions */}
-          <div className="hidden lg:flex flex-1 justify-end items-center space-x-4">
+          <div className="hidden lg:flex justify-end items-center space-x-4">
             <Button variant="ghost" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Request demo</Button>
             <div className="w-[1px] h-4 bg-[#A29F95] opacity-50"></div>
             <Button variant="ghost" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Login</Button>

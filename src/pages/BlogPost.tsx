@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { RecentBlogPosts } from "@/components/blog/RecentBlogPosts";
 import { useParams } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { calculateReadingTime } from "@/utils/readingTime";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -31,6 +32,8 @@ const BlogPost = () => {
     }
   };
 
+  const readTime = calculateReadingTime(post.content);
+
   return (
     <div className="min-h-screen bg-background pt-20 md:pt-32 pb-20">
       <div className="container mx-auto">
@@ -40,9 +43,9 @@ const BlogPost = () => {
             className="w-full h-[411px] p-5 relative bg-cover bg-center rounded-t-[30px]"
             style={{ backgroundImage: `url(${post.image})` }}
           >
-            <div className="bg-white/50 backdrop-blur-sm rounded-[10px] px-[10px] py-[10px] w-fit">
-              <span className="text-[16px] leading-[21px] font-semibold text-black font-['Chakra_Petch']">
-                {post.readTime}
+            <div className="bg-white/50 backdrop-blur-sm rounded-[10px] px-2 py-1.5 w-fit">
+              <span className="text-[12px] leading-[16px] font-semibold text-black font-['Chakra_Petch']">
+                {readTime}
               </span>
             </div>
           </div>

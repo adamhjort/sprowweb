@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { calculateReadingTime } from "@/utils/readingTime";
 
 interface BlogPost {
   id: number;
   image: string;
-  readTime: string;
+  readTime?: string;
+  content: string;
   tags: string[];
   title: string;
 }
@@ -15,8 +17,8 @@ interface BlogCardProps {
 
 export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
   const imageClasses = {
-    featured: 'h-[400px] w-full', // Reduced from 572px
-    horizontal: 'h-full w-1/2', // Using Tailwind's w-1/2 for exact 50% width
+    featured: 'h-[400px] w-full',
+    horizontal: 'h-full w-1/2',
     default: 'h-[258px] w-full'
   }[variant];
 
@@ -25,6 +27,8 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
     horizontal: 'flex flex-row',
     default: 'flex flex-col'
   }[variant];
+
+  const readTime = post.readTime || calculateReadingTime(post.content);
 
   return (
     <Link 
@@ -35,9 +39,9 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
         className={`p-5 relative bg-cover bg-center ${imageClasses}`}
         style={{ backgroundImage: `url(${post.image})` }}
       >
-        <div className="bg-white/50 rounded-[10px] px-2 py-2 w-fit">
-          <span className="text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616]">
-            {post.readTime}
+        <div className="bg-white/50 rounded-[10px] px-2 py-1.5 w-fit">
+          <span className="text-[12px] leading-[16px] font-semibold text-[#161616]">
+            {readTime}
           </span>
         </div>
       </div>

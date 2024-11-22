@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { BlogGrid } from "@/components/blog/BlogGrid";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -43,30 +43,6 @@ const Blog = () => {
     }
   ];
 
-  const recentPosts = [
-    {
-      id: 5,
-      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
-      readTime: "5 min read",
-      tags: ["Management", "The Future of Work", "Culture"],
-      title: "Why Employee Engagement Isn't Enough: How to Foster True Empowerment in the Workplace"
-    },
-    {
-      id: 6,
-      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
-      readTime: "5 min read",
-      tags: ["Management", "The Future of Work", "Culture"],
-      title: "From Feedback to Action: Turning Employee Surveys Into Real Change"
-    },
-    {
-      id: 7,
-      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
-      readTime: "5 min read",
-      tags: ["Management", "The Future of Work", "Culture"],
-      title: "The Future of Leadership: What Managers Need to Succeed in 2024 and Beyond"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background pt-32">
       <div className="container mx-auto px-4">
@@ -90,112 +66,13 @@ const Blog = () => {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="flex flex-col lg:flex-row justify-center items-start gap-[30px] max-w-[1274px] mx-auto">
-          {/* Featured Post (Left Column) */}
-          <Link to={`/blog/${featuredPost.id}`} className="w-full lg:w-[536px] bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden h-full">
-            <div 
-              className="w-full h-[572px] p-[30px_20px] relative bg-cover bg-center rounded-t-[30px]"
-              style={{ backgroundImage: `url(${featuredPost.image})` }}
-            >
-              <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
-                <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
-                  {featuredPost.readTime}
-                </span>
-              </div>
-            </div>
-            <div className="p-[30px_50px_50px] space-y-5">
-              <div className="flex flex-wrap gap-[10px]">
-                {featuredPost.tags.map((tag) => (
-                  <span 
-                    key={tag}
-                    className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h2 className="text-[30px] leading-[39px] font-semibold text-[#161616]">
-                {featuredPost.title}
-              </h2>
-            </div>
-          </Link>
+        <BlogGrid featuredPost={featuredPost} otherPosts={otherPosts} />
 
-          {/* Other Posts (Right Column) */}
-          <div className="w-full lg:w-[708px] flex flex-col gap-[30px]">
-            {otherPosts.map((post) => (
-              <Link 
-                key={post.id}
-                to={`/blog/${post.id}`} 
-                className="flex flex-col md:flex-row bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden"
-              >
-                <div 
-                  className="w-full md:w-[225px] h-[258px] p-5 relative bg-cover bg-center rounded-t-[30px] md:rounded-l-[30px] md:rounded-tr-none"
-                  style={{ backgroundImage: `url(${post.image})` }}
-                >
-                  <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
-                    <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
-                      {post.readTime}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-1 p-[30px] space-y-5">
-                  <div className="flex flex-wrap gap-[10px]">
-                    {post.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="text-[24px] leading-[31px] font-semibold text-[#161616]">
-                    {post.title}
-                  </h2>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Recent Posts */}
-        <div className="max-w-[1000px] mx-auto mt-20 mb-20">
-          <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-            {recentPosts.map((recentPost) => (
-              <Link 
-                key={recentPost.id}
-                to={`/blog/${recentPost.id}`} 
-                className="bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden"
-              >
-                <div 
-                  className="w-full h-[200px] p-5 relative bg-cover bg-center"
-                  style={{ backgroundImage: `url(${recentPost.image})` }}
-                >
-                  <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
-                    <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
-                      {recentPost.readTime}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-[30px] space-y-5">
-                  <div className="flex flex-wrap gap-[10px]">
-                    {recentPost.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-[20px] leading-[26px] font-semibold text-[#161616]">
-                    {recentPost.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
+        {/* Load More Button */}
+        <div className="flex justify-center mt-12 mb-20">
+          <Button variant="outline" className="rounded-full px-8">
+            Load more
+          </Button>
         </div>
       </div>
     </div>

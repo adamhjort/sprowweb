@@ -36,7 +36,7 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
         style={{ backgroundImage: `url(${post.image})` }}
       >
         <div className="bg-white/50 rounded-[10px] px-2 py-2 w-fit">
-          <span className="text-[14px] leading-[18px] font-semibold text-[#161616]">
+          <span className="text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616]">
             {post.readTime}
           </span>
         </div>
@@ -46,13 +46,13 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
           {post.tags.map((tag) => (
             <span 
               key={tag}
-              className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-3 py-1.5 text-[12px] font-semibold"
+              className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-2 md:px-3 py-1 md:py-1.5 text-[10px] md:text-[12px] font-semibold"
             >
               {tag}
             </span>
           ))}
         </div>
-        <h2 className={`${variant === 'featured' ? 'text-[30px] leading-[39px]' : 'text-[24px] leading-[31px]'} font-semibold text-[#161616]`}>
+        <h2 className={`${variant === 'featured' ? 'text-[24px] md:text-[30px] leading-[31px] md:leading-[39px]' : 'text-[20px] md:text-[24px] leading-[26px] md:leading-[31px]'} font-semibold text-[#161616]`}>
           {post.title}
         </h2>
       </div>

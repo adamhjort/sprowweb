@@ -126,13 +126,13 @@ export const HowItWorksSection = () => {
   }, [emblaApi, activeTab]);
 
   return (
-    <section className="container mx-auto px-4 py-20 bg-background">
+    <section className="py-20">
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
       
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1440px] mx-auto px-4">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
-            <TabsList className="flex flex-wrap justify-center gap-[10px] w-full max-w-[1200px]">
+            <TabsList className="flex flex-wrap justify-center gap-[10px] w-full max-w-[1200px] bg-transparent p-0">
               <TabsTrigger 
                 value="hr" 
                 className="flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap data-[state=active]:bg-[#FF93AD] data-[state=inactive]:bg-white data-[state=inactive]:border-2 data-[state=inactive]:border-[#A29F95]"

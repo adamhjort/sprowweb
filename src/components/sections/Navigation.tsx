@@ -10,7 +10,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
   const MobileMenu = () => (
     <div className="flex flex-col space-y-4 pt-4">
       <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">About</a>
-      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Pricing</a>
+      <a href="/pricing" className="text-foreground hover:text-primary transition-colors px-4 py-2">Pricing</a>
       <a href="/blog" className="text-foreground hover:text-primary transition-colors px-4 py-2">Resources</a>
       <hr className="my-2" />
       <Button variant="ghost" className="justify-start">Request demo</Button>
@@ -31,7 +31,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
           {/* Middle column - Navigation links */}
           <div className="hidden lg:flex justify-center items-center gap-8">
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
-            <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
+            <a href="/pricing" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
             <a href="/blog" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
           </div>
           
@@ -45,7 +45,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
             </Button>
           </div>
 
-          {/* Mobile menu button - Moved to the right */}
+          {/* Mobile menu button */}
           <div className="lg:hidden flex justify-end">
             <Sheet>
               <SheetTrigger asChild>

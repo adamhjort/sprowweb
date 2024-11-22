@@ -4,6 +4,8 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { Navigation } from "@/components/sections/Navigation";
+import { HeroSection } from "@/components/sections/HeroSection";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,69 +19,24 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const MobileMenu = () => (
-    <div className="flex flex-col space-y-4 pt-4">
-      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">About</a>
-      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Pricing</a>
-      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Resources</a>
-      <hr className="my-2" />
-      <Button variant="ghost" className="justify-start">Request demo</Button>
-      <Button variant="ghost" className="justify-start">Login</Button>
-      <Button className="justify-start">Sign up</Button>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-background">
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
-        <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
-          <div className="flex justify-between items-center h-[70px]">
-            <div className="text-2xl font-bold text-primary">Sprow</div>
-            
-            <div className="hidden md:flex space-x-6">
-              <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Pricing</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Resources</a>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-4">
-              <Button variant="ghost">Request demo</Button>
-              <Button variant="ghost">Login</Button>
-              <Button>Sign up</Button>
-            </div>
-
-            <Sheet>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <MobileMenu />
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </nav>
-
+      <Navigation isScrolled={isScrolled} />
+      
       {/* Hero and Trusted By Container with shared background */}
-      <div className="relative before:content-[''] before:absolute before:inset-0 before:bg-[url('/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-50">
-        {/* Hero Section */}
-        <section className="hero-background relative min-h-screen">
-          <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-20 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
-              Empowering Teams.<br />
-              Elevating Leaders.
-            </h1>
-            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up px-4">
-              Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
-            </p>
-            <Button size="lg" className="animate-fade-up">Sign up</Button>
-          </div>
-        </section>
+      <div className="relative w-full max-w-[1440px] mx-auto">
+        <div className="absolute inset-0 w-full h-[956px]">
+          <img 
+            src="/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png"
+            alt="Background pattern"
+            className="w-full h-full object-cover opacity-50"
+          />
+        </div>
+        
+        <HeroSection />
 
         {/* Trusted By Section */}
-        <section className="bg-[#FFF8E2] py-12 md:py-16">
+        <section className="relative py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 justify-items-center">
@@ -93,7 +50,6 @@ const Index = () => {
 
       {/* Why Sprow Section */}
       <section className="container mx-auto px-4 py-16 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16">Why Sprow</h2>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           <div className="text-center">
             <div className="mb-6">
@@ -137,12 +93,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <TestimonialsSection />
-
-      {/* How it Works Section */}
       <HowItWorksSection />
-
+      
       {/* Footer */}
       <footer className="flex flex-col md:flex-row justify-between items-start md:items-center py-8 md:py-5 px-4 md:pr-5 md:pl-0 w-full min-w-[320px] max-w-[1440px] h-auto md:h-[113px] bg-white">
         {/* Sitemap */}

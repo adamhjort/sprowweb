@@ -69,35 +69,41 @@ const Index = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
-                alt="A Unified Platform" 
-                className="w-full h-48 object-contain rounded-lg"
+                src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
+                alt="A Unified Platform for Employees and Managers" 
+                className="w-full h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">A Unified Platform</h3>
-            <p className="text-muted-foreground">Bring everything together in one platform for employees and managers.</p>
+            <h3 className="text-xl font-semibold mb-4">A Unified Platform for Employees and Managers</h3>
+            <p className="text-muted-foreground">
+              Sprow brings everything together in one platform, designed specifically for employees and managers. From professional growth to leadership development, Sprow ensures that every part of the journey is connected, making collaboration and progress seamless.
+            </p>
           </div>
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
-                alt="AI-powered Growth" 
-                className="w-full h-48 object-contain rounded-lg"
+                src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
+                alt="AI-powered Growth and leadership" 
+                className="w-full h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">AI-powered Growth</h3>
-            <p className="text-muted-foreground">Leverage AI to deliver personalized insights and recommendations.</p>
+            <h3 className="text-xl font-semibold mb-4">AI-powered Growth and leadership</h3>
+            <p className="text-muted-foreground">
+              Sprow uses AI to deliver personalized recommendations and insights that drive meaningful discussions. By understanding each individual's unique context, Sprow helps guide both employees and managers toward their full potential.
+            </p>
           </div>
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/e3764372-ffa8-4c13-b346-d90bfa5a3b4a.png" 
-                alt="Long-term Success" 
-                className="w-full h-48 object-contain rounded-lg"
+                src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
+                alt="Focused on long term success" 
+                className="w-full h-48 object-contain"
               />
             </div>
-            <h3 className="text-xl font-semibold mb-4">Long-term Success</h3>
-            <p className="text-muted-foreground">Focus on sustainable growth and development for your team.</p>
+            <h3 className="text-xl font-semibold mb-4">Focused on long term success</h3>
+            <p className="text-muted-foreground">
+              Sprow empowers both employees and managers with tools that foster long-term growth. Whether you're starting a team or advancing in your role, Sprow supports your journey to success in an ever-changing workplace.
+            </p>
           </div>
         </div>
       </section>

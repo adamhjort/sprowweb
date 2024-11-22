@@ -132,22 +132,22 @@ export const HowItWorksSection = () => {
       <div className="max-w-5xl mx-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
-            <TabsList className="inline-flex flex-col sm:flex-row h-auto sm:h-14 items-center justify-center rounded-full bg-transparent p-1 gap-4 w-full max-w-[300px] sm:max-w-none">
+            <TabsList className="inline-flex h-[46px] items-center justify-center rounded-none bg-transparent p-0 gap-[10px] w-auto">
               <TabsTrigger 
                 value="hr" 
-                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For HR
               </TabsTrigger>
               <TabsTrigger 
                 value="managers" 
-                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Managers
               </TabsTrigger>
               <TabsTrigger 
                 value="employees" 
-                className="w-full sm:w-auto rounded-full px-8 sm:px-12 py-3 text-lg font-medium bg-white border-2 border-[#FF93AD] data-[state=active]:bg-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Employees
               </TabsTrigger>

@@ -9,19 +9,14 @@ const CATEGORIES = [
   "Employee Experience",
   "Culture",
   "Performance & Growth",
-];
-
-const SUB_CATEGORIES = [
   "AI & Technology",
   "Industry Trends", 
   "Case Studies & Success Stories",
   "Thought Leadership",
-  "Product",
 ];
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedSubCategory, setSelectedSubCategory] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -53,50 +48,28 @@ const Blog = () => {
             </p>
 
             {/* Categories Container */}
-            <div className="flex flex-col gap-[10px] w-full max-w-[1200px]">
-              {/* Main Categories */}
-              <div className="flex flex-wrap justify-center gap-[10px] w-full">
-                {CATEGORIES.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
-                      ${
-                        selectedCategory === category
-                          ? "bg-[#FF93AD]"
-                          : "bg-white border-2 border-[#A29F95]"
-                      }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-
-              {/* Sub Categories */}
-              <div className="flex flex-wrap justify-center gap-[10px] w-full">
-                {SUB_CATEGORIES.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedSubCategory(category === selectedSubCategory ? null : category)}
-                    className={`flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
-                      ${
-                        selectedSubCategory === category
-                          ? "bg-[#FF93AD] border-2 border-[#FF93AD]"
-                          : "bg-white border-2 border-[#A29F95]"
-                      }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
+            <div className="flex flex-wrap justify-center gap-[10px] w-full max-w-[1200px]">
+              {CATEGORIES.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`flex justify-center items-center px-[10px] md:px-[20px] py-[8px] md:py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[12px] md:text-[14px] leading-[16px] md:leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
+                    ${
+                      selectedCategory === category
+                        ? "bg-[#FF93AD]"
+                        : "bg-white border-2 border-[#A29F95]"
+                    }`}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* Blog Posts Grid */}
           <div className="w-full max-w-[1274px] px-4 mx-auto">
             <RecentBlogPosts 
-              selectedTag={selectedCategory === "All" ? undefined : selectedCategory} 
-              selectedSubCategory={selectedSubCategory}
+              selectedTag={selectedCategory === "All" ? undefined : selectedCategory}
             />
           </div>
         </div>

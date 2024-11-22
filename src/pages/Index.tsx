@@ -36,7 +36,7 @@ const Index = () => {
         <HeroSection />
 
         {/* Trusted By Section */}
-        <section className="relative py-12 md:py-16">
+        <section className="relative py-8">
           <div className="container mx-auto px-4">
             <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
             <div className="overflow-hidden">
@@ -55,46 +55,56 @@ const Index = () => {
       </div>
 
       {/* Why Sprow Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">Why Sprow</h2>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          <div className="text-left">
-            <div className="mb-6">
+      <section className="flex flex-col items-center py-16 md:py-20 gap-[50px] max-w-[1054px] mx-auto">
+        <h2 className="w-full text-[30px] font-semibold leading-[39px] text-center font-['Chakra_Petch']">
+          Why Sprow
+        </h2>
+        <div className="flex flex-col md:flex-row items-start gap-[47px] w-full">
+          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
+            <div className="w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="A Unified Platform for Employees and Managers" 
-                className="w-full h-36 md:h-48 object-contain"
+                className="w-full h-full object-cover mix-blend-hard-light"
               />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-4">A Unified Platform for Employees and Managers</h3>
-            <p className="text-sm md:text-base text-muted-foreground">
+            <h3 className="text-[20px] font-semibold leading-[26px] font-['Chakra_Petch']">
+              A Unified Platform for Employees and Managers
+            </h3>
+            <p className="text-[16px] leading-[21px] font-['Chakra_Petch']">
               Sprow brings everything together in one platform, designed specifically for employees and managers. From professional growth to leadership development, Sprow ensures that every part of the journey is connected, making collaboration and progress seamless.
             </p>
           </div>
-          <div className="text-left">
-            <div className="mb-6">
+          
+          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
+            <div className="w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="AI-powered Growth and leadership" 
-                className="w-full h-36 md:h-48 object-contain"
+                className="w-full h-full object-cover mix-blend-hard-light"
               />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-4">AI-powered Growth and leadership</h3>
-            <p className="text-sm md:text-base text-muted-foreground">
-              Sprow uses AI to deliver personalized recommendations and insights that drive meaningful discussions. By understanding each individual's unique context, Sprow helps guide both employees and managers toward their full potential.
+            <h3 className="text-[20px] font-semibold leading-[26px] font-['Chakra_Petch']">
+              AI-powered Growth and leadership
+            </h3>
+            <p className="text-[16px] leading-[21px] font-['Chakra_Petch']">
+              Sprow uses AI to deliver personalized recommendations and insights that drive meaningful development. By understanding each individual's unique context, Sprow helps guide both employees and managers toward their full potential.
             </p>
           </div>
-          <div className="text-left">
-            <div className="mb-6">
+          
+          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
+            <div className="w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="Focused on long term success" 
-                className="w-full h-36 md:h-48 object-contain"
+                className="w-full h-full object-cover mix-blend-hard-light"
               />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-4">Focused on long term success</h3>
-            <p className="text-sm md:text-base text-muted-foreground">
-              Sprow empowers both employees and managers with tools that foster long-term growth. Whether you're starting a team or advancing in your role, Sprow supports your journey to success in an ever-changing workplace.
+            <h3 className="text-[20px] font-semibold leading-[26px] font-['Chakra_Petch']">
+              Focused on long term success
+            </h3>
+            <p className="text-[16px] leading-[21px] font-['Chakra_Petch']">
+              Sprow empowers both employees and managers with tools that foster long-term growth. Whether you're leading a team or advancing in your role, Sprow supports your journey to success in an ever-changing workplace.
             </p>
           </div>
         </div>

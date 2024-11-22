@@ -55,13 +55,13 @@ const Index = () => {
       </div>
 
       {/* Why Sprow Section */}
-      <section className="flex flex-col items-center py-16 md:py-20 gap-[50px] max-w-[1054px] mx-auto">
+      <section className="flex flex-col items-center py-16 md:py-20 gap-[50px] px-5 max-w-[1054px] mx-auto">
         <h2 className="w-full text-[30px] font-semibold leading-[39px] text-center font-['Chakra_Petch']">
           Why Sprow
         </h2>
-        <div className="flex flex-col md:flex-row items-start gap-[47px] w-full">
-          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
-            <div className="w-[240px] h-[239px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[47px] w-full">
+          <div className="flex flex-col items-start p-5 md:p-10 gap-5 bg-white rounded-[30px]">
+            <div className="w-full md:w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="A Unified Platform for Employees and Managers" 
@@ -76,8 +76,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
-            <div className="w-[240px] h-[239px]">
+          <div className="flex flex-col items-start p-5 md:p-10 gap-5 bg-white rounded-[30px]">
+            <div className="w-full md:w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="AI-powered Growth and leadership" 
@@ -92,8 +92,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex-1 flex flex-col items-start p-10 gap-5 bg-white rounded-[30px] h-[647px]">
-            <div className="w-[240px] h-[239px]">
+          <div className="flex flex-col items-start p-5 md:p-10 gap-5 bg-white rounded-[30px]">
+            <div className="w-full md:w-[240px] h-[239px]">
               <img 
                 src="/lovable-uploads/fa9c9d95-1b13-4fa5-ae44-10b8e3432cd8.png" 
                 alt="Focused on long term success" 

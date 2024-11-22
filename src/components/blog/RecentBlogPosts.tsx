@@ -92,7 +92,7 @@ export const RecentBlogPosts = ({
 
   // Calculate how many complete sets of 4 posts we can show
   const numberOfSets = Math.floor(displayLimit / 4);
-  const postsToShow = filteredPosts.slice(0, numberOfSets * 4);
+  const postsToShow = filteredPosts.slice(0, displayLimit);
   const hasMorePosts = filteredPosts.length > postsToShow.length;
 
   // Split posts into sets of 4 for proper grid layout

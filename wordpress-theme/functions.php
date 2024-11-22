@@ -11,3 +11,6 @@ function sprow_enqueue_scripts() {
     wp_enqueue_script('sprow-script', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_scripts');
+
+// Include the Recent Posts Widget
+require get_template_directory() . '/inc/widgets/recent-posts-widget.php';

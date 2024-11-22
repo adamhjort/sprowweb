@@ -43,6 +43,30 @@ const Blog = () => {
     }
   ];
 
+  const recentPosts = [
+    {
+      id: 5,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
+      readTime: "5 min read",
+      tags: ["Management", "The Future of Work", "Culture"],
+      title: "Why Employee Engagement Isn't Enough: How to Foster True Empowerment in the Workplace"
+    },
+    {
+      id: 6,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
+      readTime: "5 min read",
+      tags: ["Management", "The Future of Work", "Culture"],
+      title: "From Feedback to Action: Turning Employee Surveys Into Real Change"
+    },
+    {
+      id: 7,
+      image: "/lovable-uploads/e5c1ec63-c51d-41b5-a319-99a76924a129.png",
+      readTime: "5 min read",
+      tags: ["Management", "The Future of Work", "Culture"],
+      title: "The Future of Leadership: What Managers Need to Succeed in 2024 and Beyond"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background pt-32">
       <div className="container mx-auto px-4">
@@ -134,11 +158,44 @@ const Blog = () => {
           </div>
         </div>
 
-        {/* Load More Button */}
-        <div className="flex justify-center mt-12 mb-12">
-          <Button variant="outline" className="rounded-full px-8">
-            Load more
-          </Button>
+        {/* Recent Posts */}
+        <div className="max-w-[1000px] mx-auto mt-20 mb-20">
+          <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+            {recentPosts.map((recentPost) => (
+              <Link 
+                key={recentPost.id}
+                to={`/blog/${recentPost.id}`} 
+                className="bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden"
+              >
+                <div 
+                  className="w-full h-[200px] p-5 relative bg-cover bg-center"
+                  style={{ backgroundImage: `url(${recentPost.image})` }}
+                >
+                  <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
+                    <span className="text-[16px] leading-[21px] font-semibold text-[#161616]">
+                      {recentPost.readTime}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-[30px] space-y-5">
+                  <div className="flex flex-wrap gap-[10px]">
+                    {recentPost.tags.map((tag) => (
+                      <span 
+                        key={tag}
+                        className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-[20px] leading-[26px] font-semibold text-[#161616]">
+                    {recentPost.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

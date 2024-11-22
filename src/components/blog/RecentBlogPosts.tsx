@@ -82,20 +82,38 @@ export const RecentBlogPosts = ({ currentPostId, limit = 4 }: RecentBlogPostsPro
     ? allPosts.filter(post => post.id !== currentPostId)
     : allPosts;
 
-  const recentPosts = filteredPosts.slice(0, displayLimit);
-  const hasMorePosts = filteredPosts.length > displayLimit;
-  
-  // Use the first post as featured and the rest as other posts
-  const [featuredPost, ...otherPosts] = recentPosts;
+  // Calculate how many complete sets of 4 posts we can show
+  const numberOfSets = Math.floor(displayLimit / 4);
+  const postsToShow = filteredPosts.slice(0, numberOfSets * 4);
+  const hasMorePosts = filteredPosts.length > postsToShow.length;
+
+  // Split posts into sets of 4 for proper grid layout
+  const postSets = [];
+  for (let i = 0; i < postsToShow.length; i += 4) {
+    const set = postsToShow.slice(i, i + 4);
+    if (set.length === 4) {
+      postSets.push({
+        featuredPost: set[0],
+        otherPosts: set.slice(1)
+      });
+    }
+  }
 
   const handleLoadMore = () => {
     setDisplayLimit(prev => prev + 4);
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full space-y-12">
       <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
-      <BlogGrid featuredPost={featuredPost} otherPosts={otherPosts} />
+      
+      {postSets.map((set, index) => (
+        <BlogGrid 
+          key={set.featuredPost.id} 
+          featuredPost={set.featuredPost} 
+          otherPosts={set.otherPosts}
+        />
+      ))}
       
       {/* Load More Button */}
       {hasMorePosts && (

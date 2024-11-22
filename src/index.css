@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 37 100% 97%;
+    --background: 48 100% 91%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -47,7 +47,7 @@
 
 /* Hero section background */
 .hero-background {
-  background-color: #FFF8EE;
+  background-color: #FFF8E2;
   background-image: url('/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png');
   background-size: cover;
   background-position: center;

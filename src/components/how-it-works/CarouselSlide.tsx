@@ -13,10 +13,10 @@ export const CarouselSlide = ({ title, items }: CarouselSlideProps) => {
   return (
     <div className="space-y-8 px-4">
       <h3 className="text-2xl font-semibold text-center mb-8">{title}</h3>
-      <div className="grid gap-8 max-w-4xl mx-auto">
+      <div className="grid gap-12 max-w-4xl mx-auto">
         {items.map((item, index) => (
-          <div key={index} className="flex items-center gap-8 animate-fade-in">
-            <div className="w-32 h-32 flex-shrink-0">
+          <div key={index} className="flex items-start gap-8 animate-fade-in">
+            <div className="w-48 h-48 flex-shrink-0">
               <img 
                 src={item.image} 
                 alt={item.title}

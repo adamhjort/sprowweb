@@ -35,15 +35,8 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Background */}
-      <section className="relative min-h-screen">
-        <div 
-          className="absolute inset-0 bg-center bg-cover z-0"
-          style={{
-            backgroundImage: "url('/lovable-uploads/42408ce7-50a0-4bcf-88a9-912675f98446.png')",
-            opacity: 0.1
-          }}
-        />
+      {/* Hero Section */}
+      <section className="hero-background relative min-h-screen">
         <div className="relative z-10 container mx-auto px-4 pt-40 pb-20 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
             Empowering Teams.<br />

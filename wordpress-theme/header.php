@@ -9,7 +9,13 @@
     <nav class="border-b">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-primary">
-                <?php bloginfo('name'); ?>
+                <?php
+                if (has_custom_logo()) {
+                    the_custom_logo();
+                } else {
+                    echo bloginfo('name');
+                }
+                ?>
             </div>
             <?php
             wp_nav_menu(array(

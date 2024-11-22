@@ -3,6 +3,14 @@ function sprow_theme_support() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    
+    // Add custom logo support
+    add_theme_support('custom-logo', array(
+        'height'      => 70,
+        'width'       => 134,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
 }
 add_action('after_setup_theme', 'sprow_theme_support');
 
@@ -11,6 +19,38 @@ function sprow_enqueue_scripts() {
     wp_enqueue_script('sprow-script', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_scripts');
+
+// Add customizer settings for social links
+function sprow_customize_register($wp_customize) {
+    // Add Social Links Section
+    $wp_customize->add_section('sprow_social_links', array(
+        'title'    => __('Social Links', 'sprow'),
+        'priority' => 120,
+    ));
+
+    // LinkedIn URL
+    $wp_customize->add_setting('sprow_linkedin_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('sprow_linkedin_url', array(
+        'label'    => __('LinkedIn URL', 'sprow'),
+        'section'  => 'sprow_social_links',
+        'type'     => 'url',
+    ));
+
+    // Instagram URL
+    $wp_customize->add_setting('sprow_instagram_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('sprow_instagram_url', array(
+        'label'    => __('Instagram URL', 'sprow'),
+        'section'  => 'sprow_social_links',
+        'type'     => 'url',
+    ));
+}
+add_action('customize_register', 'sprow_customize_register');
 
 // Add REST API support for tags, read time, and author
 function sprow_register_rest_fields() {

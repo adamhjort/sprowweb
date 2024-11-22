@@ -13,9 +13,10 @@ interface BlogPost {
 interface RecentBlogPostsProps {
   currentPostId?: number;
   limit?: number;
+  selectedTag?: string;
 }
 
-export const RecentBlogPosts = ({ currentPostId, limit = 4 }: RecentBlogPostsProps) => {
+export const RecentBlogPosts = ({ currentPostId, limit = 4, selectedTag }: RecentBlogPostsProps) => {
   const [displayLimit, setDisplayLimit] = useState(limit);
 
   // This would typically come from an API or database
@@ -78,9 +79,9 @@ export const RecentBlogPosts = ({ currentPostId, limit = 4 }: RecentBlogPostsPro
     }
   ];
 
-  const filteredPosts = currentPostId 
-    ? allPosts.filter(post => post.id !== currentPostId)
-    : allPosts;
+  const filteredPosts = allPosts
+    .filter(post => !currentPostId || post.id !== currentPostId)
+    .filter(post => !selectedTag || post.tags.includes(selectedTag));
 
   // Calculate how many complete sets of 4 posts we can show
   const numberOfSets = Math.floor(displayLimit / 4);
@@ -105,8 +106,6 @@ export const RecentBlogPosts = ({ currentPostId, limit = 4 }: RecentBlogPostsPro
 
   return (
     <div className="w-full space-y-12">
-      <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
-      
       {postSets.map((set, index) => (
         <BlogGrid 
           key={set.featuredPost.id} 

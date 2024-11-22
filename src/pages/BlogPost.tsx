@@ -76,7 +76,7 @@ const BlogPost = () => {
             </div>
 
             {/* Author */}
-            <div className="flex items-center gap-4 pt-8 border-t border-gray-200">
+            <div className="flex items-center gap-4 pt-8">
               <Avatar className="h-12 w-12">
                 <AvatarImage src={post.author_info.avatar} alt={post.author_info.name} />
                 <AvatarFallback>{post.author_info.name.charAt(0)}</AvatarFallback>

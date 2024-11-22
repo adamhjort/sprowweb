@@ -20,9 +20,9 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
   );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
       <div className={`max-w-[1420px] w-full mx-auto transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
-        <div className="grid grid-cols-3 items-center h-[70px] px-4 max-w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-3 items-center h-[70px] px-2 lg:px-4 max-w-full">
           {/* Left column - Logo */}
           <div className="flex justify-start">
             <div className="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center">Sprow</div>
@@ -45,16 +45,19 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
             </Button>
           </div>
 
-          <Sheet>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <MobileMenu />
-            </SheetContent>
-          </Sheet>
+          {/* Mobile menu button - Moved to the right */}
+          <div className="lg:hidden flex justify-end">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="mr-2">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <MobileMenu />
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>

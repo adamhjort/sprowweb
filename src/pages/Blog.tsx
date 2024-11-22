@@ -39,7 +39,7 @@ const Blog = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-[50px] md:gap-[100px] pt-[100px] md:pt-[150px] relative px-4">
+        <div className="flex flex-col items-center gap-[50px] md:gap-[100px] pt-[100px] md:pt-[150px] pb-[100px] relative px-4">
           {/* Header Content */}
           <div className="flex flex-col items-center gap-[30px] md:gap-[50px] w-full max-w-[737px]">
             <h1 className="text-[40px] md:text-[60px] leading-[52px] md:leading-[78px] font-semibold text-[#161616] font-['Chakra_Petch'] text-center">

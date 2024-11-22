@@ -74,7 +74,14 @@ const BlogPost = () => {
 
         {/* Recent Posts */}
         <div className="max-w-[1274px] mx-auto mt-12">
-          <RecentBlogPosts currentPostId={postId} limit={4} />
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-[30px]">
+            <div className="w-full lg:w-[536px]">
+              {/* Left column - empty to match the blog landing page layout */}
+            </div>
+            <div className="w-full lg:w-[708px]">
+              <RecentBlogPosts currentPostId={postId} limit={4} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

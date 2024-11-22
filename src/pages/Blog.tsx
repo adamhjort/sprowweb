@@ -16,7 +16,6 @@ const SUB_CATEGORIES = [
   "Industry Trends",
   "Case Studies & Success Stories",
   "Thought Leadership",
-  "Product",
 ];
 
 const Blog = () => {

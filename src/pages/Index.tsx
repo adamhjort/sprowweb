@@ -41,19 +41,17 @@ const Index = () => {
         <HeroSection />
 
         {/* Trusted By Section */}
-        <section className="relative py-8">
-          <div className="container mx-auto px-4">
-            <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
-            <div className="overflow-hidden">
-              <div className="flex animate-[slide_20s_linear_infinite] gap-6 md:gap-8">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={`duplicate-${i}`} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
-                ))}
-              </div>
+        <section className="relative py-8 max-w-[1054px] mx-auto px-5">
+          <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
+          <div className="overflow-hidden">
+            <div className="flex animate-[slide_20s_linear_infinite] gap-6 md:gap-8">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={`duplicate-${i}`} className="flex-shrink-0 h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded"></div>
+              ))}
             </div>
           </div>
         </section>

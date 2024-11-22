@@ -115,44 +115,47 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Footer */}
-      <footer className="border-t">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Features</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Pricing</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Sign up</a></li>
-              </ul>
+      <footer className="border-t py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
+            {/* Logo and Links */}
+            <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-12">
+              {/* Logo */}
+              <div className="text-2xl font-bold text-[#FF93AD]">Sprow</div>
+              
+              {/* Navigation Links */}
+              <div className="flex flex-wrap gap-6">
+                <a href="/about" className="text-foreground hover:text-primary transition-colors">About</a>
+                <a href="/pricing" className="text-foreground hover:text-primary transition-colors">Pricing</a>
+                <a href="/resources" className="text-foreground hover:text-primary transition-colors">Resources</a>
+                <a href="/terms" className="text-foreground hover:text-primary transition-colors">Terms of use</a>
+                <a href="/privacy" className="text-foreground hover:text-primary transition-colors">Privacy policy</a>
+                <a href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+                <a href="/signup" className="text-foreground hover:text-primary transition-colors">Sign up</a>
+                <a href="/demo" className="text-foreground hover:text-primary transition-colors">Book a demo</a>
+                <a href="/login" className="text-foreground hover:text-primary transition-colors">Login</a>
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">About</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Blog</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Careers</a></li>
-              </ul>
+
+            {/* Social and Made with Love */}
+            <div className="flex items-center space-x-6">
+              {/* Social Icons */}
+              <div className="flex space-x-4">
+                <a href="https://linkedin.com" className="text-foreground hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://instagram.com" className="text-foreground hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+              </div>
+              
+              {/* Made with Love in Sweden */}
+              <div className="flex items-center space-x-1 text-sm">
+                <span>Made with</span>
+                <span className="text-red-500">♥️</span>
+                <span>in Sweden</span>
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Documentation</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Help Center</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Privacy</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Terms</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Security</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-            <p>&copy; 2024 Sprow. All rights reserved.</p>
           </div>
         </div>
       </footer>

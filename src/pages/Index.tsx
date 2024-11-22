@@ -31,9 +31,9 @@ const Index = () => {
             alt="Background pattern"
             className="w-full h-full object-cover opacity-50"
             style={{
-              objectPosition: 'center',
+              objectPosition: 'center 100px',
               objectFit: 'cover',
-              transform: 'scale(1.5)'
+              transform: 'scale(1.2)'
             }}
           />
         </div>

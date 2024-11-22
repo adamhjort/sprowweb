@@ -25,7 +25,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
         <div className="flex justify-between items-center h-[70px]">
           <div className="text-2xl font-bold text-primary">Sprow</div>
           
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 px-10">
             <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">Pricing</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">Resources</a>

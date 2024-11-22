@@ -135,16 +135,16 @@ const Index = () => {
 
             {/* Terms and policy */}
             <div className="flex flex-col items-start gap-[5px]">
-              <a href="/terms" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
-              <a href="/privacy" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
-              <a href="/contact" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Contact</a>
+              <a href="/terms" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Terms of use</a>
+              <a href="/privacy" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Privacy policy</a>
+              <a href="/contact" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Contact</a>
             </div>
 
             {/* Login */}
             <div className="flex flex-col items-start gap-[5px]">
-              <a href="/signup" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
-              <a href="/demo" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
-              <a href="/login" className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616] hover:text-primary transition-colors">Login</a>
+              <a href="/signup" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Sign up</a>
+              <a href="/demo" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Book a demo</a>
+              <a href="/login" className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616] hover:text-primary transition-colors">Login</a>
             </div>
           </div>
         </div>
@@ -166,9 +166,9 @@ const Index = () => {
 
           {/* Made with love in Sweden */}
           <div className="flex flex-row items-center gap-[5px]">
-            <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">Made with</span>
+            <span className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616]">Made with</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D74949" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">in Sweden</span>
+            <span className="font-['Chakra_Petch'] text-[14px] leading-[18px] text-[#161616]">in Sweden</span>
           </div>
         </div>
       </footer>

@@ -24,12 +24,16 @@ const Index = () => {
       <Navigation isScrolled={isScrolled} />
       
       {/* Hero and Trusted By Container with shared background */}
-      <div className="relative w-full max-w-[1440px] mx-auto">
+      <div className="relative w-full max-w-[1440px] mx-auto overflow-hidden">
         <div className="absolute inset-0 w-full h-[956px]">
           <img 
             src="/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png"
             alt="Background pattern"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover"
+            style={{
+              objectPosition: 'center',
+              objectFit: 'cover'
+            }}
           />
         </div>
         

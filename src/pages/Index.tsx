@@ -29,10 +29,11 @@ const Index = () => {
           <img 
             src="/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png"
             alt="Background pattern"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-50"
             style={{
               objectPosition: 'center',
-              objectFit: 'cover'
+              objectFit: 'cover',
+              transform: 'scale(1.5)'
             }}
           />
         </div>

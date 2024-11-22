@@ -14,14 +14,12 @@ interface RecentBlogPostsProps {
   currentPostId?: number;
   limit?: number;
   selectedTag?: string;
-  selectedSubCategory?: string | null;
 }
 
 export const RecentBlogPosts = ({ 
   currentPostId, 
   limit = 4, 
   selectedTag,
-  selectedSubCategory 
 }: RecentBlogPostsProps) => {
   const [displayLimit, setDisplayLimit] = useState(limit);
 
@@ -87,8 +85,16 @@ export const RecentBlogPosts = ({
 
   const filteredPosts = allPosts
     .filter(post => !currentPostId || post.id !== currentPostId)
-    .filter(post => !selectedTag || post.tags.includes(selectedTag))
-    .filter(post => !selectedSubCategory || post.tags.includes(selectedSubCategory));
+    .filter(post => !selectedTag || post.tags.includes(selectedTag));
+
+  // If there are no posts in the selected category, show a message
+  if (selectedTag && filteredPosts.length === 0) {
+    return (
+      <div className="w-full text-center py-12">
+        <p className="text-lg text-muted-foreground">No posts available in the {selectedTag} category.</p>
+      </div>
+    );
+  }
 
   // Calculate how many complete sets of 4 posts we can show
   const numberOfSets = Math.floor(displayLimit / 4);

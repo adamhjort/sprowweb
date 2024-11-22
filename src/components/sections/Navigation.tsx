@@ -20,7 +20,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
   );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-[10px] ${isScrolled ? 'py-2' : 'py-4'}`}>
       <div className={`container mx-auto px-4 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
         <div className="flex justify-between items-center h-[70px]">
           <div className="text-2xl font-bold text-primary">Sprow</div>

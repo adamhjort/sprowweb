@@ -11,7 +11,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
     <div className="flex flex-col space-y-4 pt-4">
       <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">About</a>
       <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Pricing</a>
-      <a href="#" className="text-foreground hover:text-primary transition-colors px-4 py-2">Resources</a>
+      <a href="/blog" className="text-foreground hover:text-primary transition-colors px-4 py-2">Resources</a>
       <hr className="my-2" />
       <Button variant="ghost" className="justify-start">Request demo</Button>
       <Button variant="ghost" className="justify-start">Login</Button>
@@ -32,7 +32,7 @@ export const Navigation = ({ isScrolled }: NavigationProps) => {
           <div className="hidden lg:flex justify-center items-center gap-8">
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">About</a>
             <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Pricing</a>
-            <a href="#" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
+            <a href="/blog" className="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">Resources</a>
           </div>
           
           {/* Right column - Actions */}

@@ -40,17 +40,17 @@
                 
                 <!-- Actions -->
                 <div class="hidden lg:flex justify-end items-center space-x-4">
-                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Request demo</button>
+                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2"><?php echo sprow_translate('Request demo'); ?></button>
                     <div class="w-[1px] h-4 bg-[#A29F95] opacity-50"></div>
-                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Login</button>
+                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2"><?php echo sprow_translate('Login'); ?></button>
                     <button class="h-[35px] bg-[#FF93AD] hover:bg-primary-hover rounded-[10px] text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4">
-                        Sign up
+                        <?php echo sprow_translate('Sign up'); ?>
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex justify-end">
-                    <button class="text-foreground p-2" aria-label="Toggle mobile menu" data-toggle="mobile-menu">
+                    <button class="text-foreground p-2" aria-label="<?php echo esc_attr(sprow_translate('Toggle mobile menu')); ?>" data-toggle="mobile-menu">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -60,7 +60,7 @@
                 <!-- Mobile Menu -->
                 <div class="mobile-menu hidden lg:hidden fixed inset-0 bg-white z-50">
                     <div class="p-4">
-                        <button class="text-foreground p-2 float-right" aria-label="Close mobile menu" data-toggle="mobile-menu">
+                        <button class="text-foreground p-2 float-right" aria-label="<?php echo esc_attr(sprow_translate('Close mobile menu')); ?>" data-toggle="mobile-menu">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                             </svg>

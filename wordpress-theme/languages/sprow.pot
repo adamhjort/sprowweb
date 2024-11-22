@@ -1,0 +1,40 @@
+# Copyright (C) 2024 Sprow Theme
+msgid ""
+msgstr ""
+"Project-Id-Version: Sprow 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sprow\n"
+"POT-Creation-Date: 2024-03-20 12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: header.php:42
+msgid "Request demo"
+msgstr ""
+
+#: header.php:44
+msgid "Login"
+msgstr ""
+
+#: header.php:46
+msgid "Sign up"
+msgstr ""
+
+#: header.php:52
+msgid "Toggle mobile menu"
+msgstr ""
+
+#: header.php:63
+msgid "Close mobile menu"
+msgstr ""
+
+#: template-parts/content-blog-card.php:15
+msgid "min read"
+msgstr ""
+
+#: template-parts/content-blog-card.php:45
+msgid "Written by"
+msgstr ""

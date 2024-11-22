@@ -18,6 +18,12 @@ function sprow_theme_support() {
         'mobile' => __('Mobile Menu', 'sprow'),
         'footer' => __('Footer Menu', 'sprow'),
     ));
+
+    // Add theme text domain support
+    load_theme_textdomain('sprow', get_template_directory() . '/languages');
+
+    // Add editor style support
+    add_editor_style();
 }
 add_action('after_setup_theme', 'sprow_theme_support');
 
@@ -58,6 +64,32 @@ function sprow_customize_register($wp_customize) {
     ));
 }
 add_action('customize_register', 'sprow_customize_register');
+
+// Add AI Translation Support
+function sprow_ai_translation_support() {
+    // Register strings for translation
+    if (function_exists('pll_register_string')) {
+        // Register common strings
+        pll_register_string('sprow-read-time', 'min read', 'Sprow Theme');
+        pll_register_string('sprow-written-by', 'Written by', 'Sprow Theme');
+        pll_register_string('sprow-request-demo', 'Request demo', 'Sprow Theme');
+        pll_register_string('sprow-login', 'Login', 'Sprow Theme');
+        pll_register_string('sprow-sign-up', 'Sign up', 'Sprow Theme');
+        pll_register_string('sprow-about', 'About', 'Sprow Theme');
+        pll_register_string('sprow-pricing', 'Pricing', 'Sprow Theme');
+        pll_register_string('sprow-blog', 'Blog', 'Sprow Theme');
+        pll_register_string('sprow-resources', 'Resources', 'Sprow Theme');
+    }
+}
+add_action('init', 'sprow_ai_translation_support');
+
+// Add translation wrapper function
+function sprow_translate($text, $domain = 'sprow') {
+    if (function_exists('pll__')) {
+        return pll__($text);
+    }
+    return __($text, $domain);
+}
 
 // Add REST API support for tags, read time, and author
 function sprow_register_rest_fields() {
@@ -193,3 +225,4 @@ add_action('save_post', 'sprow_save_read_time_meta_box');
 
 // Include the Recent Posts Widget
 require get_template_directory() . '/inc/widgets/recent-posts-widget.php';
+

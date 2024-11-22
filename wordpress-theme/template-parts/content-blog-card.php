@@ -1,48 +1,37 @@
-<?php
-$categories = get_the_category();
-$tags = get_the_tags();
-$read_time = get_post_meta(get_the_ID(), 'read_time', true) ?: '5 min read';
-?>
-
-<article class="bg-white rounded-[30px] shadow-[0px_0px_6px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg">
+<article class="bg-white rounded-[20px] shadow-sm overflow-hidden hover:shadow-md transition-shadow">
     <?php if (has_post_thumbnail()) : ?>
-        <div class="p-5">
-            <div class="relative bg-cover bg-center h-[258px] rounded-[20px]" style="background-image: url('<?php echo get_the_post_thumbnail_url(null, 'large'); ?>')">
-                <div class="absolute top-4 left-4">
-                    <div class="bg-white/50 backdrop-blur-sm rounded-[10px] px-2 py-2">
-                        <span class="text-[14px] leading-[18px] font-semibold text-[#161616]">
-                            <?php echo esc_html($read_time); ?>
-                        </span>
-                    </div>
-                </div>
-            </div>
+        <div class="aspect-w-16 aspect-h-9">
+            <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
         </div>
     <?php endif; ?>
-
-    <div class="p-[20px] space-y-4">
-        <?php if ($tags) : ?>
-            <div class="flex flex-wrap gap-2">
-                <?php foreach ($tags as $tag) : ?>
-                    <a href="<?php echo get_tag_link($tag->term_id); ?>" 
-                       class="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-3 py-1.5 text-[12px] font-semibold hover:bg-[#FFB1C3] transition-colors">
-                        <?php echo esc_html($tag->name); ?>
-                    </a>
+    
+    <div class="p-6">
+        <?php
+        $categories = get_the_category();
+        if ($categories) : ?>
+            <div class="flex flex-wrap gap-2 mb-4">
+                <?php foreach ($categories as $category) : ?>
+                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                        <?php echo esc_html($category->name); ?>
+                    </span>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
 
-        <h2 class="text-[24px] leading-[31px] font-semibold text-[#161616]">
-            <a href="<?php the_permalink(); ?>" class="hover:text-[#FF93AD] transition-colors">
+        <h2 class="text-xl font-semibold mb-2 hover:text-primary transition-colors">
+            <a href="<?php the_permalink(); ?>">
                 <?php the_title(); ?>
             </a>
         </h2>
 
-        <div class="text-[16px] leading-[21px] text-[#666666]">
+        <div class="text-muted-foreground mb-4">
             <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
         </div>
 
-        <div class="text-[14px] leading-[18px] text-[#666666]">
-            <?php echo get_the_date('F j, Y'); ?>
+        <div class="flex items-center text-sm text-muted-foreground">
+            <span><?php echo get_the_date(); ?></span>
+            <span class="mx-2">•</span>
+            <span><?php echo get_the_author(); ?></span>
         </div>
     </div>
 </article>

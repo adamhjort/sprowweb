@@ -64,3 +64,4 @@ function register_sprow_recent_posts_widget() {
     register_widget('Sprow_Recent_Posts_Widget');
 }
 add_action('widgets_init', 'register_sprow_recent_posts_widget');
+

@@ -20,6 +20,7 @@ const SUB_CATEGORIES = [
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSubCategory, setSelectedSubCategory] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-20">
@@ -60,7 +61,13 @@ const Blog = () => {
               {SUB_CATEGORIES.map((category) => (
                 <button
                   key={category}
-                  className="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] bg-white border-2 border-[#A29F95] whitespace-nowrap"
+                  onClick={() => setSelectedSubCategory(category === selectedSubCategory ? null : category)}
+                  className={`flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
+                    ${
+                      selectedSubCategory === category
+                        ? "bg-[#FF93AD]"
+                        : "bg-white border-2 border-[#A29F95]"
+                    }`}
                 >
                   {category}
                 </button>

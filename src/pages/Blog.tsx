@@ -38,12 +38,12 @@ const Blog = () => {
             </p>
 
             {/* Main Categories */}
-            <div className="flex flex-wrap justify-center items-start content-center gap-[10px] w-full max-w-[1200px] mx-auto">
+            <div className="flex flex-wrap gap-[10px] w-full">
               {CATEGORIES.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors
+                  className={`flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
                     ${
                       selectedCategory === category
                         ? "bg-[#FF93AD]"
@@ -56,11 +56,11 @@ const Blog = () => {
             </div>
 
             {/* Sub Categories */}
-            <div className="flex flex-wrap justify-center items-start content-center gap-[10px] w-full max-w-[1200px] mx-auto">
+            <div className="flex flex-wrap gap-[10px] w-full">
               {SUB_CATEGORIES.map((category) => (
                 <button
                   key={category}
-                  className="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] bg-white border-2 border-[#A29F95]"
+                  className="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] bg-white border-2 border-[#A29F95] whitespace-nowrap"
                 >
                   {category}
                 </button>

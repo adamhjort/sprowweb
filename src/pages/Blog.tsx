@@ -26,7 +26,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <div className="relative w-full max-w-[1440px] mx-auto">
-        <div className="absolute inset-0 w-full h-[956px]">
+        <div className="absolute inset-0 w-full" style={{ height: '1500px' }}>
           <img 
             src="/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png"
             alt="Background pattern"

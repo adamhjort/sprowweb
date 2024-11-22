@@ -17,7 +17,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation - Floating */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <div className={`container mx-auto px-6 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg rounded-[20px]' : ''}`}>
           <div className="flex justify-between items-center h-[70px]">
@@ -115,8 +114,6 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Footer */}
-
-      {/* Footer */}
       <footer className="flex flex-row justify-between items-center py-5 pr-5 pl-0 w-full min-w-[320px] max-w-[1440px] h-auto md:h-[113px] bg-white">
         {/* Sitemap */}
         <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-[50px] w-full md:w-[559px]">
@@ -148,7 +145,7 @@ const Index = () => {
         </div>
 
         {/* Social links */}
-        <div className="hidden md:flex flex-row items-end gap-[31px] w-[303px]">
+        <div className="hidden md:flex flex-row items-center gap-[31px] w-[303px]">
           {/* Social Icons */}
           <div className="flex flex-row items-center gap-[10px]">
             <a href="https://linkedin.com" className="text-[#161616] hover:text-primary transition-colors">
@@ -163,14 +160,13 @@ const Index = () => {
           <div className="w-[20px] h-0 rotate-90 border-2 border-[#161616] opacity-20" />
 
           {/* Made with love in Sweden */}
-          <div className="flex flex-row items-start gap-[5px]">
+          <div className="flex flex-row items-center gap-[5px]">
             <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">Made with</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D74949" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             <span className="font-['Chakra_Petch'] text-[16px] leading-[21px] text-[#161616]">in Sweden</span>
           </div>
         </div>
       </footer>
-
     </div>
   );
 };

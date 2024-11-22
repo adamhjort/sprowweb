@@ -132,22 +132,22 @@ export const HowItWorksSection = () => {
       <div className="max-w-5xl mx-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
-            <TabsList className="inline-flex h-[46px] items-center justify-center rounded-none bg-transparent p-0 gap-[10px] w-auto">
+            <TabsList className="inline-flex flex-col md:flex-row h-auto md:h-[46px] items-center justify-center rounded-none bg-transparent p-0 gap-[10px] w-full md:w-auto">
               <TabsTrigger 
                 value="hr" 
-                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For HR
               </TabsTrigger>
               <TabsTrigger 
                 value="managers" 
-                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Managers
               </TabsTrigger>
               <TabsTrigger 
                 value="employees" 
-                className="h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
+                className="w-full md:w-auto h-[46px] px-[30px] py-[10px] text-xl font-semibold bg-white border-2 border-[#A29F95] rounded-[20px] data-[state=active]:bg-[#FF93AD] data-[state=active]:border-[#FF93AD] data-[state=active]:text-black hover:bg-[#FF93AD]/10 transition-all"
               >
                 For Employees
               </TabsTrigger>

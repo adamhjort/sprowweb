@@ -40,13 +40,13 @@ const Blog = () => {
         </div>
 
         <div className="container mx-auto px-4 pt-32 pb-20 relative">
-          <div className="max-w-[1274px] mx-auto">
+          <div className="max-w-[1274px] mx-auto text-center">
             {/* Header */}
             <div className="mb-16 space-y-6">
               <h1 className="text-[64px] leading-[83px] font-bold text-[#161616] font-['Chakra_Petch']">
                 Blog
               </h1>
-              <p className="text-[20px] leading-[26px] text-[#161616] max-w-[800px]">
+              <p className="text-[20px] leading-[26px] text-[#161616] mx-auto max-w-[800px]">
                 Explore Sprow's blog for expert insights on HR strategies, employee engagement, and team
                 management. Stay updated on the latest trends in workplace culture, leadership
                 development, and AI-powered tools to help your organization and employees grow. Dive into
@@ -54,7 +54,7 @@ const Blog = () => {
               </p>
 
               {/* Main Categories */}
-              <div className="flex flex-wrap gap-[10px]">
+              <div className="flex flex-wrap gap-[10px] justify-center">
                 {CATEGORIES.map((category) => (
                   <button
                     key={category}
@@ -72,7 +72,7 @@ const Blog = () => {
               </div>
 
               {/* Sub Categories */}
-              <div className="flex flex-wrap gap-[10px]">
+              <div className="flex flex-wrap gap-[10px] justify-center">
                 {SUB_CATEGORIES.map((category) => (
                   <button
                     key={category}

@@ -35,18 +35,18 @@ export const BlogCard = ({ post, variant = 'default' }: BlogCardProps) => {
         className={`p-5 relative bg-cover bg-center ${imageClasses}`}
         style={{ backgroundImage: `url(${post.image})` }}
       >
-        <div className="bg-white/50 rounded-[10px] px-[10px] py-[10px] w-fit">
+        <div className="bg-white/50 rounded-[10px] px-2 py-2 w-fit">
           <span className="text-[14px] leading-[18px] font-semibold text-[#161616]">
             {post.readTime}
           </span>
         </div>
       </div>
-      <div className={`p-[30px] space-y-5 flex-grow ${variant === 'featured' ? 'p-[30px_50px_50px]' : ''}`}>
-        <div className="flex flex-wrap gap-[10px]">
+      <div className={`p-[20px] space-y-4 flex-grow ${variant === 'featured' ? 'p-[20px_35px_35px]' : ''}`}>
+        <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <span 
               key={tag}
-              className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-5 py-[10px] text-xs font-semibold"
+              className="bg-[#FFC8D5] text-[#161616] rounded-[20px] px-3 py-1.5 text-[12px] font-semibold"
             >
               {tag}
             </span>

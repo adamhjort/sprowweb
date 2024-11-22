@@ -25,7 +25,7 @@ const Index = () => {
       
       {/* Hero and Trusted By Container with shared background */}
       <div className="relative w-full max-w-[1440px] mx-auto overflow-hidden">
-        <div className="absolute inset-0 w-full h-[956px]">
+        <div className="absolute inset-0 w-full" style={{ height: '1500px' }}>
           <img 
             src="/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png"
             alt="Background pattern"
@@ -60,7 +60,7 @@ const Index = () => {
       </div>
 
       {/* Why Sprow Section */}
-      <section className="flex flex-col items-center py-16 md:py-20 gap-[50px] px-5 max-w-[1054px] mx-auto">
+      <section className="relative flex flex-col items-center py-16 md:py-20 gap-[50px] px-5 max-w-[1054px] mx-auto">
         <h2 className="w-full text-[30px] font-semibold leading-[39px] text-center font-['Chakra_Petch']">
           Why Sprow
         </h2>

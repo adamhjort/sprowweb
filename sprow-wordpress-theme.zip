@@ -16,4 +16,7 @@ wordpress-theme/inc/setup/theme-support.php
 wordpress-theme/inc/setup/assets.php
 wordpress-theme/inc/setup/post-types.php
 wordpress-theme/languages/sprow.pot
-wordpress-theme/tailwind.config.js]
+wordpress-theme/tailwind.config.js
+wordpress-theme/assets/images/background-pattern.png
+wordpress-theme/assets/js/main.js
+wordpress-theme/assets/css/editor-style.css]

@@ -3,27 +3,36 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CarouselSlide } from '../how-it-works/CarouselSlide';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const employeeData = {
   title: "For employees",
   items: [
     {
-      title: "Set meaningful, actionable goals",
-      description: "Sprow helps you establish personalized, relevant goals for your team, ensuring that each objective supports both individual growth and overall team performance.",
+      title: "Set meaningful goals",
+      description: "Create personalized development goals that align with your career aspirations and team objectives.",
       image: "/lovable-uploads/4de49e94-d73d-459f-aa76-3826565d14d3.png"
     },
     {
-      title: "Stay on top of progress with timely nudges",
-      description: "You'll receive reminders before 1-on-1s and follow-up tasks, helping you manage your team's development without extra effort. Sprow nudges you when a goal needs updating or feedback is overdue.",
+      title: "Track progress",
+      description: "Monitor your progress with real-time updates and milestone tracking.",
       image: "/lovable-uploads/4de49e94-d73d-459f-aa76-3826565d14d3.png"
     },
     {
-      title: "Empower your team's continuous growth",
-      description: "With AI offering personalized recommendations, follow-ups, and goal updates, you can ensure your team is always progressing and aligned with long-term leadership development.",
+      title: "Receive feedback",
+      description: "Get constructive feedback from your manager and peers to improve continuously.",
+      image: "/lovable-uploads/4de49e94-d73d-459f-aa76-3826565d14d3.png"
+    },
+    {
+      title: "Learn and develop",
+      description: "Access personalized learning resources and development opportunities.",
+      image: "/lovable-uploads/4de49e94-d73d-459f-aa76-3826565d14d3.png"
+    },
+    {
+      title: "Stay motivated",
+      description: "Celebrate achievements and stay motivated with regular progress updates.",
       image: "/lovable-uploads/4de49e94-d73d-459f-aa76-3826565d14d3.png"
     }
   ]
@@ -33,18 +42,28 @@ const managerData = {
   title: "For managers",
   items: [
     {
-      title: "Use 1-on-1 data to drive meaningful insights",
-      description: "Managers' notes from 1-on-1s are cross-referenced with employee surveys, performance data, and goals, offering HR a holistic view of employee engagement and progress.",
+      title: "Guide team development",
+      description: "Set and monitor team goals while providing guidance for individual growth.",
       image: "/lovable-uploads/18769a62-993b-424f-86db-636bfed8574f.png"
     },
     {
-      title: "Automate follow-ups and task tracking",
-      description: "AI generates follow-up tasks based on 1-on-1 meetings, and nudges both HR and managers to ensure tasks are completed. HR no longer has to chase down details — Sprow keeps everything moving forward.",
+      title: "Streamline 1-on-1s",
+      description: "Conduct effective one-on-one meetings with structured agendas and follow-ups.",
       image: "/lovable-uploads/18769a62-993b-424f-86db-636bfed8574f.png"
     },
     {
-      title: "Calendar integration for seamless scheduling",
-      description: "Sprow's calendar integration ensures you never miss a 1-on-1 and that all meetings are aligned with your team's progress. It keeps everything in 2-way sync so you can focus on leadership, not logistics.",
+      title: "Track performance",
+      description: "Monitor team performance and identify areas for improvement.",
+      image: "/lovable-uploads/18769a62-993b-424f-86db-636bfed8574f.png"
+    },
+    {
+      title: "Provide feedback",
+      description: "Give timely and constructive feedback to help team members grow.",
+      image: "/lovable-uploads/18769a62-993b-424f-86db-636bfed8574f.png"
+    },
+    {
+      title: "Drive engagement",
+      description: "Keep your team engaged with regular check-ins and recognition.",
       image: "/lovable-uploads/18769a62-993b-424f-86db-636bfed8574f.png"
     }
   ]
@@ -54,42 +73,59 @@ const hrData = {
   title: "For HR",
   items: [
     {
-      title: "Align development goals with business priorities",
-      description: "HR can work with managers and employees to set actionable goals that tie directly to company objectives, ensuring growth that's aligned with long-term success.",
+      title: "Strategic oversight",
+      description: "Gain comprehensive insights into organizational development and performance.",
       image: "/lovable-uploads/70ca6623-c207-4f34-9e79-51b7df038115.png"
     },
     {
-      title: "Identify and support managerial development",
-      description: "Sprow's AI doesn't just track performance; it identifies managers who may need additional support or training, explains why, and recommends tailored strategies for improvement.",
+      title: "Data-driven decisions",
+      description: "Make informed decisions based on real-time performance and engagement data.",
       image: "/lovable-uploads/70ca6623-c207-4f34-9e79-51b7df038115.png"
     },
     {
-      title: "Drive retention and engagement",
-      description: "With Sprow, HR can easily monitor employee development and adjust strategies based on real-time data. This proactive approach improves employee satisfaction, retention, and organizational success.",
+      title: "Talent development",
+      description: "Identify and nurture high-potential employees across the organization.",
+      image: "/lovable-uploads/70ca6623-c207-4f34-9e79-51b7df038115.png"
+    },
+    {
+      title: "Policy compliance",
+      description: "Ensure consistent application of development and performance policies.",
+      image: "/lovable-uploads/70ca6623-c207-4f34-9e79-51b7df038115.png"
+    },
+    {
+      title: "Measure impact",
+      description: "Track and measure the impact of development initiatives on business outcomes.",
       image: "/lovable-uploads/70ca6623-c207-4f34-9e79-51b7df038115.png"
     }
   ]
 };
 
 export const HowItWorksSection = () => {
+  const [activeTab, setActiveTab] = React.useState("hr");
+
   return (
     <section className="container mx-auto px-4 py-20">
       <h2 className="text-3xl font-bold text-center mb-16">How it works</h2>
-      <Carousel className="max-w-5xl mx-auto">
-        <CarouselContent className="px-8">
-          <CarouselItem className="transition-opacity duration-300">
-            <CarouselSlide {...hrData} />
-          </CarouselItem>
-          <CarouselItem className="transition-opacity duration-300">
-            <CarouselSlide {...managerData} />
-          </CarouselItem>
-          <CarouselItem className="transition-opacity duration-300">
-            <CarouselSlide {...employeeData} />
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious className="left-0" />
-        <CarouselNext className="right-0" />
-      </Carousel>
+      
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
+        <TabsList className="grid w-full grid-cols-3 mb-8">
+          <TabsTrigger value="hr">For HR</TabsTrigger>
+          <TabsTrigger value="managers">For Managers</TabsTrigger>
+          <TabsTrigger value="employees">For Employees</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="hr" className="mt-0">
+          <CarouselSlide {...hrData} />
+        </TabsContent>
+        
+        <TabsContent value="managers" className="mt-0">
+          <CarouselSlide {...managerData} />
+        </TabsContent>
+        
+        <TabsContent value="employees" className="mt-0">
+          <CarouselSlide {...employeeData} />
+        </TabsContent>
+      </Tabs>
     </section>
   );
 };

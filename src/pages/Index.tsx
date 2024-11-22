@@ -62,31 +62,34 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero-background relative min-h-screen before:content-[''] before:absolute before:inset-0 before:bg-[url('/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-50">
-        <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-20 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
-            Empowering Teams.<br />
-            Elevating Leaders.
-          </h1>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up px-4">
-            Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
-          </p>
-          <Button size="lg" className="animate-fade-up">Sign up</Button>
-        </div>
-      </section>
-
-      {/* Trusted By Section */}
-      <section className="bg-[#FFF8E2] py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 justify-items-center">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded animate-pulse"></div>
-            ))}
+      {/* Hero and Trusted By Container with shared background */}
+      <div className="relative before:content-[''] before:absolute before:inset-0 before:bg-[url('/lovable-uploads/8f515b57-13dc-49a2-8b0f-59a88933722f.png')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-50">
+        {/* Hero Section */}
+        <section className="hero-background relative min-h-screen">
+          <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-20 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
+              Empowering Teams.<br />
+              Elevating Leaders.
+            </h1>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up px-4">
+              Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
+            </p>
+            <Button size="lg" className="animate-fade-up">Sign up</Button>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Trusted By Section */}
+        <section className="bg-[#FFF8E2] py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-center text-xl md:text-2xl font-semibold mb-8 md:mb-10">Trusted by</h2>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 justify-items-center">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="h-10 md:h-12 w-24 md:w-32 bg-gray-200 rounded animate-pulse"></div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Why Sprow Section */}
       <section className="container mx-auto px-4 py-16 md:py-20">

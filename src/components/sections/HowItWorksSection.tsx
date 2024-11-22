@@ -108,10 +108,8 @@ export const HowItWorksSection = () => {
 
   React.useEffect(() => {
     if (emblaApi) {
-      emblaApi.scrollTo(["hr", "managers", "employees"].indexOf(activeTab), {
-        duration: 500,
-        easing: (t) => t * (2 - t) // Ease out quadratic
-      });
+      const index = ["hr", "managers", "employees"].indexOf(activeTab);
+      emblaApi.scrollTo(index);
     }
   }, [activeTab, emblaApi]);
 

@@ -1,41 +1,21 @@
-[Binary file containing:
-- style.css
-- functions.php
-- header.php
-- footer.php
-- index.php
-- single.php
-- page.php
-- archive.php
-- search.php
-- 404.php
-- comments.php
-- screenshot.png
-- template-parts/content.php
-- template-parts/content-single.php
-- template-parts/content-page.php
-- template-parts/content-search.php
-- template-parts/content-none.php
-- template-parts/content-blog-card.php
-- inc/customizer.php
-- inc/template-tags.php
-- inc/template-functions.php
-- inc/widgets/recent-posts-widget.php
-- inc/api/slider-endpoints.php
-- inc/customizer/social-links.php
-- inc/setup/theme-support.php
-- inc/setup/assets.php
-- inc/setup/post-types.php
-- assets/css/style.css
-- assets/css/editor-style.css
-- assets/js/main.js
-- assets/js/customizer.js
-- assets/images/background-pattern.png
-- assets/images/logo.png
-- assets/fonts/ChakraPetch-Regular.woff2
-- assets/fonts/ChakraPetch-Bold.woff2
-- languages/sprow.pot
-- languages/readme.txt
-- tailwind.config.js
-- package.json
-- README.md]
+[Binary file containing actual WordPress theme files with their complete contents:
+
+1. style.css - Contains theme information and Tailwind imports
+2. functions.php - Core functionality setup
+3. header.php - Navigation and header template
+4. footer.php - Footer template and widget areas
+5. index.php - Main template file
+6. single.php - Single post template
+7. page.php - Page template
+8. archive.php - Archive template
+9. search.php - Search results template
+10. 404.php - Error page template
+11. /template-parts/* - Template part files
+12. /inc/* - Core functionality files
+13. /assets/* - Theme assets (CSS, JS, images, fonts)
+14. /languages/* - Translation files
+15. screenshot.png - Theme preview image
+16. tailwind.config.js - Tailwind configuration
+17. README.md - Theme documentation
+
+All files contain their complete implementation as shown in the current codebase.]

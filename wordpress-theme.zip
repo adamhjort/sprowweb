@@ -1,41 +1,50 @@
 [Binary file containing:
-- style.css
-- functions.php
-- header.php
-- footer.php
-- index.php
-- single.php
-- page.php
-- archive.php
-- search.php
-- 404.php
-- comments.php
-- screenshot.png
-- template-parts/content.php
-- template-parts/content-single.php
-- template-parts/content-page.php
-- template-parts/content-search.php
-- template-parts/content-none.php
-- template-parts/content-blog-card.php
-- inc/customizer.php
-- inc/template-tags.php
-- inc/template-functions.php
-- inc/widgets/recent-posts-widget.php
-- inc/api/slider-endpoints.php
-- inc/customizer/social-links.php
-- inc/setup/theme-support.php
-- inc/setup/assets.php
-- inc/setup/post-types.php
-- assets/css/style.css
-- assets/css/editor-style.css
-- assets/js/main.js
-- assets/js/customizer.js
-- assets/images/background-pattern.png
-- assets/images/logo.png
-- assets/fonts/ChakraPetch-Regular.woff2
-- assets/fonts/ChakraPetch-Bold.woff2
-- languages/sprow.pot
-- languages/readme.txt
-- tailwind.config.js
-- package.json
-- README.md]
+- style.css (Theme information, Tailwind imports)
+- functions.php (Core functionality, widget registration, menu setup)
+- header.php (Navigation, mobile menu, logo)
+- footer.php (Widget areas, social links)
+- index.php (Blog listing with featured image support)
+- single.php (Single post template)
+- page.php (Default page template)
+- archive.php (Archive template)
+- search.php (Search results template)
+- 404.php (404 error page)
+- comments.php (Comments template)
+- screenshot.png (Theme preview image)
+- template-parts/
+  - content.php (Default content template)
+  - content-single.php (Single post content)
+  - content-page.php (Page content)
+  - content-search.php (Search result content)
+  - content-none.php (No results template)
+  - content-blog-card.php (Blog card template)
+- inc/
+  - customizer.php (Theme customizer settings)
+  - template-tags.php (Template functions)
+  - template-functions.php (Helper functions)
+  - widgets/recent-posts-widget.php (Recent posts widget)
+  - api/slider-endpoints.php (REST API endpoints)
+  - customizer/social-links.php (Social media settings)
+  - setup/
+    - theme-support.php (Theme setup and features)
+    - assets.php (Scripts and styles)
+    - post-types.php (Custom post types)
+- assets/
+  - css/
+    - style.css (Main stylesheet)
+    - editor-style.css (Gutenberg styles)
+  - js/
+    - main.js (Theme JavaScript)
+    - customizer.js (Customizer preview)
+  - images/
+    - background-pattern.png
+    - logo.png
+  - fonts/
+    - ChakraPetch-Regular.woff2
+    - ChakraPetch-Bold.woff2
+- languages/
+  - sprow.pot (Translation template)
+  - readme.txt
+- tailwind.config.js (Tailwind configuration)
+- package.json (Development dependencies)
+- README.md (Theme documentation)]

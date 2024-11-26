@@ -7,6 +7,7 @@ function sprow_enqueue_scripts() {
     // Enqueue theme styles
     wp_enqueue_style('sprow-style', get_stylesheet_uri());
     wp_enqueue_style('sprow-main', get_template_directory_uri() . '/assets/css/main.css');
+    wp_enqueue_style('sprow-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css');
     
     // Enqueue theme scripts
     wp_enqueue_script('sprow-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);

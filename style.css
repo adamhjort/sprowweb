@@ -1,0 +1,50 @@
+/*
+Theme Name: Sprow
+Theme URI: https://sprow.co
+Author: Sprow Team
+Author URI: https://sprow.co
+Description: A modern WordPress theme for business and SaaS companies
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sprow
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme specific styles */
+body {
+    font-family: 'Chakra Petch', system-ui, -apple-system, sans-serif;
+    color: #161616;
+    background-color: #FFF8E2;
+}
+
+.wp-block {
+    max-width: 1274px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navigation styles */
+.nav-floating {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* WordPress menu styles */
+.menu-item a {
+    @apply nav-link;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+/* Button styles */
+.wp-block-button__link {
+    @apply nav-button;
+}

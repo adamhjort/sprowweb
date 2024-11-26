@@ -18,8 +18,15 @@ Text Domain: sprow
 body {
     font-family: 'Chakra Petch', system-ui, -apple-system, sans-serif;
     color: #161616;
+    background-color: #FFF8E2;
 }
 
 .wp-block {
     max-width: 1274px;
+}
+
+/* Navigation styles */
+.nav-floating {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }

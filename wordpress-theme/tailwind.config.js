@@ -13,11 +13,11 @@ module.exports = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "#FFF8E2",
-        foreground: "hsl(var(--foreground))",
+        foreground: "#161616",
         primary: {
-          DEFAULT: "#FF8FAB",
+          DEFAULT: "#FF93AD",
           hover: "#FF7A9C",
-          foreground: "#FFFFFF",
+          foreground: "#161616",
         },
         secondary: {
           DEFAULT: "#403E43",
@@ -27,6 +27,9 @@ module.exports = {
           DEFAULT: "#F6F6F7",
           foreground: "#666666",
         },
+      },
+      fontFamily: {
+        sans: ['Chakra Petch', 'system-ui', '-apple-system', 'sans-serif'],
       },
       keyframes: {
         "fade-up": {

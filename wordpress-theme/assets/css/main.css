@@ -14,6 +14,18 @@
     .wp-block {
         @apply max-w-[1274px] mx-auto;
     }
+
+    .site-logo {
+        @apply text-[#FF93AD] font-bold text-4xl;
+    }
+
+    .nav-link {
+        @apply text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-[#FF93AD] transition-colors whitespace-nowrap;
+    }
+
+    .nav-button {
+        @apply h-[35px] bg-[#FF93AD] hover:bg-[#FF7A9C] rounded-[10px] text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4;
+    }
 }
 
 /* Custom utilities */

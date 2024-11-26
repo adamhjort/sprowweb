@@ -1,49 +1,42 @@
 <?php get_header(); ?>
 
 <main class="min-h-screen bg-background">
-    <?php if (have_posts()) : ?>
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <?php while (have_posts()) : the_post(); ?>
-                    <article class="bg-white rounded-[20px] shadow-sm overflow-hidden">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="aspect-w-16 aspect-h-9">
-                                <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <div class="p-6">
-                            <h2 class="text-xl font-semibold mb-2">
-                                <a href="<?php the_permalink(); ?>" class="hover:text-primary transition-colors">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h2>
-                            <div class="text-muted-foreground mb-4">
-                                <?php the_excerpt(); ?>
-                            </div>
-                            <div class="flex items-center text-sm text-muted-foreground">
-                                <span><?php echo get_the_date(); ?></span>
-                                <span class="mx-2">•</span>
-                                <span><?php the_author(); ?></span>
-                            </div>
-                        </div>
-                    </article>
-                <?php endwhile; ?>
-            </div>
-            
-            <div class="mt-12 flex justify-center">
-                <?php the_posts_pagination(array(
-                    'prev_text' => __('Previous', 'sprow'),
-                    'next_text' => __('Next', 'sprow'),
-                    'class' => 'flex items-center gap-4'
-                )); ?>
+    <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden">
+        <div class="absolute inset-0 w-full" style="height: 1500px;">
+            <img 
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/background-pattern.png"
+                alt="Background pattern"
+                class="w-full h-full object-cover opacity-50"
+                style="object-position: center 100px; object-fit: cover; transform: scale(1.2);"
+            />
+        </div>
+
+        <div class="container mx-auto px-4 pt-32 pb-20 relative">
+            <div class="max-w-[1274px] mx-auto">
+                <!-- Hero Section -->
+                <section class="text-center mb-16">
+                    <h1 class="text-[64px] leading-[83px] font-bold text-[#161616] font-['Chakra_Petch'] mb-6">
+                        Empowering Teams.<br/>
+                        Elevating Leaders.
+                    </h1>
+                    <p class="text-[20px] leading-[26px] text-[#161616] max-w-[800px] mx-auto mb-8">
+                        Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
+                    </p>
+                    <div class="flex justify-center gap-4">
+                        <a href="/signup" class="inline-flex h-[50px] items-center justify-center rounded-[10px] bg-[#FF93AD] px-8 font-semibold text-[#161616] hover:bg-[#FF7A9C] transition-colors">
+                            Sign up
+                        </a>
+                    </div>
+                </section>
+
+                <!-- How It Works Section -->
+                <?php get_template_part('template-parts/content', 'how-it-works'); ?>
+
+                <!-- Blog Section -->
+                <?php get_template_part('template-parts/content', 'blog'); ?>
             </div>
         </div>
-    <?php else : ?>
-        <div class="container mx-auto px-4 py-12 text-center">
-            <p class="text-lg text-muted-foreground"><?php _e('No posts found.', 'sprow'); ?></p>
-        </div>
-    <?php endif; ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>

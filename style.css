@@ -36,7 +36,7 @@ body {
 
 /* WordPress menu styles */
 .menu-item a {
-    @apply nav-link;
+    @apply text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] hover:text-[#FF93AD] transition-colors whitespace-nowrap;
 }
 
 /* Mobile menu styles */
@@ -45,6 +45,6 @@ body {
 }
 
 /* Button styles */
-.wp-block-button__link {
-    @apply nav-button;
+.nav-button {
+    @apply h-[35px] bg-[#FF93AD] hover:bg-[#FF7A9C] rounded-[10px] text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4;
 }

@@ -23,9 +23,17 @@ function sprow_translate($text, $domain = 'sprow') {
 
 // Register and enqueue styles and scripts
 function sprow_enqueue_assets() {
-    wp_enqueue_style('sprow-style', get_stylesheet_uri());
-    wp_enqueue_style('sprow-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css');
-    wp_enqueue_script('sprow-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+    // Enqueue main stylesheet (processed by Tailwind)
+    wp_enqueue_style('sprow-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
+    
+    // Enqueue custom styles
+    wp_enqueue_style('sprow-main', get_template_directory_uri() . '/assets/css/main.css', array('sprow-style'), wp_get_theme()->get('Version'));
+    
+    // Enqueue fonts
+    wp_enqueue_style('sprow-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), null);
+    
+    // Enqueue scripts
+    wp_enqueue_script('sprow-main', get_template_directory_uri() . '/assets/js/main.js', array(), wp_get_theme()->get('Version'), true);
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_assets');
 

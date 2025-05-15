@@ -1,3 +1,4 @@
+
 <?php
 // Include core functionality
 require get_template_directory() . '/inc/setup/theme-support.php';
@@ -24,8 +25,9 @@ function sprow_translate($text, $domain = 'sprow') {
 // Register and enqueue styles and scripts
 function sprow_enqueue_assets() {
     wp_enqueue_style('sprow-style', get_stylesheet_uri());
-    wp_enqueue_style('sprow-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css');
-    wp_enqueue_script('sprow-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+    wp_enqueue_style('sprow-fonts', 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+    wp_enqueue_script('sprow-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('sprow-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'sprow_enqueue_assets');
 
@@ -79,3 +81,12 @@ function sprow_widgets_init() {
     ));
 }
 add_action('widgets_init', 'sprow_widgets_init');
+
+// Add menu item classes
+function sprow_menu_item_classes($classes, $item, $args) {
+    if ($args->theme_location == 'primary' || $args->theme_location == 'mobile') {
+        $classes[] = 'menu-item';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'sprow_menu_item_classes', 10, 3);

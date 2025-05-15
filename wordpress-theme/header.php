@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -5,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('bg-background'); ?>>
     <?php wp_body_open(); ?>
-    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-[10px] py-4">
-        <div class="max-w-[1420px] w-full mx-auto">
-            <div class="grid grid-cols-2 lg:grid-cols-3 items-center h-[70px] px-2 lg:px-4 max-w-full">
+    
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-[10px] py-4">
+        <nav class="max-w-[1420px] w-full mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-3 items-center h-[70px] px-2 lg:px-4 max-w-full nav-floating rounded-[20px]">
                 <!-- Logo -->
                 <div class="flex justify-start">
-                    <?php
-                    if (has_custom_logo()) {
-                        the_custom_logo();
-                    } else {
-                        echo '<div class="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center">';
-                        bloginfo('name');
-                        echo '</div>';
-                    }
-                    ?>
+                    <?php if (has_custom_logo()) : ?>
+                        <?php the_custom_logo(); ?>
+                    <?php else : ?>
+                        <div class="text-2xl font-bold text-primary w-[134px] h-[70px] flex items-center">
+                            <?php bloginfo('name'); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -32,7 +32,7 @@
                         'menu_class' => 'flex gap-8',
                         'fallback_cb' => false,
                         'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-                        'link_before' => '<span class="text-[14px] leading-[18px] font-semibold font-[\'Chakra_Petch\'] text-[#161616] hover:text-primary transition-colors whitespace-nowrap">',
+                        'link_before' => '<span class="text-[14px] leading-[18px] font-semibold font-[\'Chakra_Petch\'] text-[#161616] hover:text-[#FF93AD] transition-colors whitespace-nowrap">',
                         'link_after' => '</span>'
                     ));
                     ?>
@@ -40,43 +40,41 @@
                 
                 <!-- Actions -->
                 <div class="hidden lg:flex justify-end items-center space-x-4">
-                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2"><?php echo sprow_translate('Request demo'); ?></button>
+                    <a href="/demo" class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Request demo</a>
                     <div class="w-[1px] h-4 bg-[#A29F95] opacity-50"></div>
-                    <button class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2"><?php echo sprow_translate('Login'); ?></button>
-                    <button class="h-[35px] bg-[#FF93AD] hover:bg-primary-hover rounded-[10px] text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4">
-                        <?php echo sprow_translate('Sign up'); ?>
-                    </button>
+                    <a href="/login" class="text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] whitespace-nowrap px-2">Login</a>
+                    <a href="/signup" class="nav-button flex items-center justify-center">
+                        Sign up
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex justify-end">
-                    <button class="text-foreground p-2" aria-label="<?php echo esc_attr(sprow_translate('Toggle mobile menu')); ?>" data-toggle="mobile-menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button type="button" class="mobile-menu-button p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
+            </div>
 
-                <!-- Mobile Menu -->
-                <div class="mobile-menu hidden lg:hidden fixed inset-0 bg-white z-50">
-                    <div class="p-4">
-                        <button class="text-foreground p-2 float-right" aria-label="<?php echo esc_attr(sprow_translate('Close mobile menu')); ?>" data-toggle="mobile-menu">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                        <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'mobile',
-                            'container' => false,
-                            'menu_class' => 'flex flex-col space-y-4 pt-4',
-                            'fallback_cb' => false,
-                            'link_before' => '<span class="text-foreground hover:text-primary transition-colors px-4 py-2">',
-                            'link_after' => '</span>'
-                        ));
-                        ?>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden">
+                <div class="container mx-auto px-4 py-4 rounded-[20px] mt-2 nav-floating">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'mobile',
+                        'container' => false,
+                        'menu_class' => 'space-y-4',
+                        'fallback_cb' => false,
+                    ));
+                    ?>
+                    <div class="mt-4 space-y-2">
+                        <a href="/demo" class="block text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4 py-2">Request demo</a>
+                        <a href="/login" class="block text-[14px] leading-[18px] font-semibold font-['Chakra_Petch'] text-[#161616] px-4 py-2">Login</a>
+                        <a href="/signup" class="block text-center nav-button mx-4 my-2">Sign up</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>

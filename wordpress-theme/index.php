@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 <main class="min-h-screen bg-background">
@@ -13,67 +14,27 @@
 
         <div class="container mx-auto px-4 pt-32 pb-20 relative">
             <div class="max-w-[1274px] mx-auto">
-                <!-- Header -->
-                <div class="mb-16 space-y-6">
-                    <h1 class="text-[64px] leading-[83px] font-bold text-[#161616] font-['Chakra_Petch']">
-                        Blog
+                <!-- Hero Section -->
+                <section class="text-center mb-16">
+                    <h1 class="text-[64px] leading-[83px] font-bold text-[#161616] font-['Chakra_Petch'] mb-6">
+                        Empowering Teams.<br/>
+                        Elevating Leaders.
                     </h1>
-                    <p class="text-[20px] leading-[26px] text-[#161616] max-w-[800px]">
-                        Explore Sprow's blog for expert insights on HR strategies, employee engagement, and team
-                        management. Stay updated on the latest trends in workplace culture, leadership
-                        development, and AI-powered tools to help your organization and employees grow.
+                    <p class="text-[20px] leading-[26px] text-[#161616] max-w-[800px] mx-auto mb-8">
+                        Sprow is an AI-powered platform that connects employees and managers for seamless growth. Using traditional HR tools, Sprow unifies all aspects of employee development.
                     </p>
-
-                    <!-- Tags -->
-                    <div class="flex flex-wrap gap-[10px]">
-                        <a href="<?php echo get_home_url(); ?>" 
-                           class="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
-                                <?php echo !is_tag() ? 'bg-[#FF93AD]' : 'bg-white border-2 border-[#A29F95]'; ?>">
-                            All
+                    <div class="flex justify-center gap-4">
+                        <a href="/signup" class="inline-flex h-[50px] items-center justify-center rounded-[10px] bg-[#FF93AD] px-8 font-semibold text-[#161616] hover:bg-[#FF7A9C] transition-colors">
+                            Sign up
                         </a>
-                        <?php
-                        $tags = get_tags();
-                        foreach($tags as $tag) : ?>
-                            <a href="<?php echo get_tag_link($tag->term_id); ?>"
-                               class="flex justify-center items-center px-[20px] py-[10px] rounded-[20px] font-['Chakra_Petch'] text-[14px] leading-[18px] font-semibold text-[#161616] transition-colors whitespace-nowrap
-                                    <?php echo is_tag($tag->term_id) ? 'bg-[#FF93AD]' : 'bg-white border-2 border-[#A29F95]'; ?>">
-                                <?php echo $tag->name; ?>
-                            </a>
-                        <?php endforeach; ?>
                     </div>
-                </div>
+                </section>
 
-                <!-- Blog Posts Grid -->
-                <?php if (have_posts()) : ?>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <?php while (have_posts()) : the_post(); ?>
-                            <?php get_template_part('template-parts/content', 'blog-card'); ?>
-                        <?php endwhile; ?>
-                    </div>
+                <!-- How It Works Section -->
+                <?php get_template_part('template-parts/content', 'how-it-works'); ?>
 
-                    <!-- Pagination -->
-                    <div class="mt-12 flex justify-center">
-                        <?php
-                        echo paginate_links(array(
-                            'prev_text' => __('Previous'),
-                            'next_text' => __('Next'),
-                            'class' => 'flex items-center gap-4'
-                        ));
-                        ?>
-                    </div>
-                <?php else : ?>
-                    <div class="w-full text-center py-12">
-                        <p class="text-lg text-muted-foreground">
-                            <?php
-                            if (is_tag()) {
-                                echo 'No posts available in this category.';
-                            } else {
-                                echo 'No posts available.';
-                            }
-                            ?>
-                        </p>
-                    </div>
-                <?php endif; ?>
+                <!-- Blog Section -->
+                <?php get_template_part('template-parts/content', 'blog'); ?>
             </div>
         </div>
     </div>
